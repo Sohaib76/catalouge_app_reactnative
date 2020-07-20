@@ -27,6 +27,7 @@ export default function ProductsListItems({route, navigation}) {
         {items.map((item, id) => (
           <View key={id}>
             <TouchableRipple
+              rippleColor="rgba(0, 0, 0, .82)"
               onPress={() =>
                 navigation.navigate('ProductsItemDesc', {item, name})
               }

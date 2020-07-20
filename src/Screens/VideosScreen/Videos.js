@@ -43,8 +43,14 @@ const theVideosList = [
 
 export default class VideosScreen extends PureComponent {
   state = {
-    videoList: theVideosList,
+    videoList: [],
   };
+
+  componentDidMount() {
+    this.setState({videoList: theVideosList});
+    console.disableYellowBox = true;
+  }
+
   render() {
     const _navMenu = () => this.props.navigation.toggleDrawer();
     console.log('Videos Render');

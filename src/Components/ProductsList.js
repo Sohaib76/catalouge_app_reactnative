@@ -9,7 +9,7 @@ export default function ProductsList({name, img, items, navigation}) {
         onPress={
           () => navigation.navigate('ProductsListItems', {items, name}) //, navigation
         }
-        rippleColor="rgba(0, 0, 0, .32)"
+        rippleColor="rgba(0, 0, 0, .92)"
         style={{
           display: 'flex',
           flexDirection: 'row',

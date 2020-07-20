@@ -15,10 +15,15 @@ import VideosScreen from './src/Screens/VideosScreen/Videos.js';
 import ProductsListItems from './src/Components/ProductsListItems';
 import ProductsItemDesc from './src/Screens/ProductsScreen/ProductsItemDesc';
 import Locations from './src/Screens/LocationsScreen/Locations';
+import EServiceDesc from './src/Screens/ServicesScreen/EServiceDesc';
+
+import Icon from 'react-native-vector-icons/Ionicons';
+import {View} from 'react-native';
+import CustomDrawerContent from './src/Components/CustomDrawerContent';
 
 const Stack = createStackNavigator();
 
-const Drawer = createDrawerNavigator();
+const Drawwer = createDrawerNavigator();
 
 const config = {
   animation: 'spring',
@@ -90,18 +95,26 @@ function FavouritesStackNavigator() {
 
 function EngineeringServicesStackNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen
         name="EngineeringServices"
         component={EngineeringServices}
       />
+      <Stack.Screen name="EServiceDesc" component={EServiceDesc} />
     </Stack.Navigator>
   );
 }
 
 function MoreStackNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        gestureEnabled: true,
+      }}>
       <Stack.Screen name="More" component={More} />
     </Stack.Navigator>
   );
@@ -110,7 +123,10 @@ function MoreStackNavigator() {
 function LocationsStackNavigator() {
   Locations;
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen name="Locations" component={Locations} />
     </Stack.Navigator>
   );
@@ -118,53 +134,33 @@ function LocationsStackNavigator() {
 
 function DrawerNavigation() {
   return (
-    <Drawer.Navigator initialRouteName="Home" backBehavior="initialRoute">
-      <Drawer.Screen name="Home" component={HomeScreen} />
-
-      <Drawer.Screen name="Products" component={ProductsStackNavigator} />
-      <Drawer.Screen name="Downloads" component={DownloadsStackNavigator} />
-      <Drawer.Screen name="Videos" component={VideosStackNavigator} />
-      <Drawer.Screen name="Contact Us" component={ContactStackNavigator} />
-      <Drawer.Screen name="Favourites" component={FavouritesStackNavigator} />
-      <Drawer.Screen
-        name="Engineering Services"
-        component={EngineeringServicesStackNavigator}
-      />
-      <Drawer.Screen name="More Information" component={MoreStackNavigator} />
-      <Drawer.Screen name="Locations" component={LocationsStackNavigator} />
-    </Drawer.Navigator>
-  );
-}
-
-function StartupStack() {
-  return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Splash"
-          component={Splash}
-          options={{
-            // transitionSpec: {
-            //   open: config,
-            //   close: config,
-            // },
-            headerShown: false,
-          }}
+      <Drawwer.Navigator
+        drawerContent={(props) => <CustomDrawerContent {...props} />}
+        initialRouteName="Home"
+        backBehavior="initialRoute">
+        <Drawwer.Screen name="Home" component={HomeScreen} />
+
+        <Drawwer.Screen name="Products" component={ProductsStackNavigator} />
+        <Drawwer.Screen name="Downloads" component={DownloadsStackNavigator} />
+        <Drawwer.Screen name="Videos" component={VideosStackNavigator} />
+        <Drawwer.Screen name="Contact Us" component={MoreStackNavigator} />
+        <Drawwer.Screen
+          name="Favourites"
+          component={FavouritesStackNavigator}
         />
-        <Stack.Screen
-          name="DrawerApp"
-          component={DrawerNavigation}
-          options={{
-            transitionSpec: {
-              open: config,
-              close: config,
-            },
-            headerShown: false,
-          }}
+        <Drawwer.Screen
+          name="Engineering Services"
+          component={EngineeringServicesStackNavigator}
         />
-      </Stack.Navigator>
+        <Drawwer.Screen
+          name="More Information"
+          component={MoreStackNavigator}
+        />
+        <Drawwer.Screen name="Locations" component={LocationsStackNavigator} />
+      </Drawwer.Navigator>
     </NavigationContainer>
   );
 }
 
-export default StartupStack;
+export default DrawerNavigation;

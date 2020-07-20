@@ -1,9 +1,9 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Text} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import {FAB, Button, TouchableRipple, IconButton} from 'react-native-paper';
+import {IconButton} from 'react-native-paper';
 
-export default function FAButton({icon, text}) {
+export default function FAButton({icon, text, fabBtnPress}) {
   return (
     <TouchableOpacity
       style={{
@@ -15,11 +15,11 @@ export default function FAButton({icon, text}) {
         borderRadius: 20,
         flex: 1,
         width: '65%',
-      }}>
+      }}
+      onPress={fabBtnPress}>
       <Text style={{color: '#fff', fontSize: 10, marginLeft: 10}}>{text}</Text>
       <IconButton
         icon={icon}
-        // color={Colors.red500}
         color="white"
         size={15}
         onPress={() => console.log('Pressed')}

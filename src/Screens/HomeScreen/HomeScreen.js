@@ -1,14 +1,24 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Image} from 'react-native';
 import styles from './styles';
 import {Appbar} from 'react-native-paper';
 import HomeCard from '../../Components/HomeCard';
+import Splash from '../SplashScreen/SplashScreen';
 
 export default function HomeScreen({navigation}) {
   const _navMenu = () => navigation.toggleDrawer();
 
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    setTimeout(function () {
+      setIsVisible(false);
+    }, 5000);
+  }, []);
+
   return (
     <View style={{flex: 1}}>
+      {isVisible ? <Splash /> : null}
       <Appbar.Header
         style={{
           backgroundColor: '#005D40',

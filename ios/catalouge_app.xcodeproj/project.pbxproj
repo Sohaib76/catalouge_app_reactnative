@@ -35,6 +35,11 @@
 		1CBFC7DA6A774B7984FD1E23 /* AGFAROTISSANSSERIFEXTRABOLD.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 9AABBF1AF02E449293FE1852 /* AGFAROTISSANSSERIFEXTRABOLD.TTF */; };
 		12DEC5275F6348E588B8F133 /* ROTIS-SANS-SERIF.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 16E2C4461F264E4589B86D3E /* ROTIS-SANS-SERIF.TTF */; };
 		E2566B0AE3144F6B9345D1BE /* ROTISSANSSERIFSTD.OTF in Resources */ = {isa = PBXBuildFile; fileRef = C7302E411F4D43498686E275 /* ROTISSANSSERIFSTD.OTF */; };
+		724EBC89EC074BE38200EA6D /* AGFAROTISSANSSERIFEXTRABOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF907722FCAB49B79694A5C8 /* AGFAROTISSANSSERIFEXTRABOLD.ttf */; };
+		1378E1B353E848A991E50605 /* ROTIS-SANS-SERIF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B6428C87AF14505BF5928DB /* ROTIS-SANS-SERIF.ttf */; };
+		7FF4F9BBFEF5401F8EA4B63E /* ROTISSANSSERIFSTD.otf in Resources */ = {isa = PBXBuildFile; fileRef = F477FCF90DCD4714ABA81D4B /* ROTISSANSSERIFSTD.otf */; };
+		ADFF55D3F11443F18A08904C /* Rotis Sans Serif 55.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 931BE1342C694273B8803DC3 /* Rotis Sans Serif 55.ttf */; };
+		8B62F0412CB44462824FF562 /* Rotis-SansSerif-Std_38713.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50DD32CEC2EB426B85451D22 /* Rotis-SansSerif-Std_38713.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +94,11 @@
 		9AABBF1AF02E449293FE1852 /* AGFAROTISSANSSERIFEXTRABOLD.TTF */ = {isa = PBXFileReference; name = "AGFAROTISSANSSERIFEXTRABOLD.TTF"; path = "../src/assets/fonts/AGFAROTISSANSSERIFEXTRABOLD.TTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		16E2C4461F264E4589B86D3E /* ROTIS-SANS-SERIF.TTF */ = {isa = PBXFileReference; name = "ROTIS-SANS-SERIF.TTF"; path = "../src/assets/fonts/ROTIS-SANS-SERIF.TTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		C7302E411F4D43498686E275 /* ROTISSANSSERIFSTD.OTF */ = {isa = PBXFileReference; name = "ROTISSANSSERIFSTD.OTF"; path = "../src/assets/fonts/ROTISSANSSERIFSTD.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CF907722FCAB49B79694A5C8 /* AGFAROTISSANSSERIFEXTRABOLD.ttf */ = {isa = PBXFileReference; name = "AGFAROTISSANSSERIFEXTRABOLD.ttf"; path = "../src/assets/fonts/AGFAROTISSANSSERIFEXTRABOLD.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5B6428C87AF14505BF5928DB /* ROTIS-SANS-SERIF.ttf */ = {isa = PBXFileReference; name = "ROTIS-SANS-SERIF.ttf"; path = "../src/assets/fonts/ROTIS-SANS-SERIF.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F477FCF90DCD4714ABA81D4B /* ROTISSANSSERIFSTD.otf */ = {isa = PBXFileReference; name = "ROTISSANSSERIFSTD.otf"; path = "../src/assets/fonts/ROTISSANSSERIFSTD.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		931BE1342C694273B8803DC3 /* Rotis Sans Serif 55.ttf */ = {isa = PBXFileReference; name = "Rotis Sans Serif 55.ttf"; path = "../src/assets/fonts/Rotis Sans Serif 55.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		50DD32CEC2EB426B85451D22 /* Rotis-SansSerif-Std_38713.ttf */ = {isa = PBXFileReference; name = "Rotis-SansSerif-Std_38713.ttf"; path = "../src/assets/fonts/Rotis-SansSerif-Std_38713.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +228,11 @@
 				9AABBF1AF02E449293FE1852 /* AGFAROTISSANSSERIFEXTRABOLD.TTF */,
 				16E2C4461F264E4589B86D3E /* ROTIS-SANS-SERIF.TTF */,
 				C7302E411F4D43498686E275 /* ROTISSANSSERIFSTD.OTF */,
+				CF907722FCAB49B79694A5C8 /* AGFAROTISSANSSERIFEXTRABOLD.ttf */,
+				5B6428C87AF14505BF5928DB /* ROTIS-SANS-SERIF.ttf */,
+				F477FCF90DCD4714ABA81D4B /* ROTISSANSSERIFSTD.otf */,
+				931BE1342C694273B8803DC3 /* Rotis Sans Serif 55.ttf */,
+				50DD32CEC2EB426B85451D22 /* Rotis-SansSerif-Std_38713.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -380,6 +395,11 @@
 				1CBFC7DA6A774B7984FD1E23 /* AGFAROTISSANSSERIFEXTRABOLD.TTF in Resources */,
 				12DEC5275F6348E588B8F133 /* ROTIS-SANS-SERIF.TTF in Resources */,
 				E2566B0AE3144F6B9345D1BE /* ROTISSANSSERIFSTD.OTF in Resources */,
+				724EBC89EC074BE38200EA6D /* AGFAROTISSANSSERIFEXTRABOLD.ttf in Resources */,
+				1378E1B353E848A991E50605 /* ROTIS-SANS-SERIF.ttf in Resources */,
+				7FF4F9BBFEF5401F8EA4B63E /* ROTISSANSSERIFSTD.otf in Resources */,
+				ADFF55D3F11443F18A08904C /* Rotis Sans Serif 55.ttf in Resources */,
+				8B62F0412CB44462824FF562 /* Rotis-SansSerif-Std_38713.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

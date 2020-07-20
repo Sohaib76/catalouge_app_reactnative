@@ -6,14 +6,80 @@ import {Appbar} from 'react-native-paper';
 import BulletPoints from '../../Components/BulletPoints.js';
 import {ScrollView} from 'react-native-gesture-handler';
 import FAButton from '../../Components/FAButton.js';
+import DataModel from './DataModel.js';
 
 export default function ProductsItemDesc({route, navigation}) {
+  const thedataObject = {
+    one: 'DM C2 5 018',
+    two: '15 - 19',
+    three: '1/8',
+    four: '15',
+    five: 'M8',
+    six: '60',
+    seven: '36',
+    eight: '26',
+
+    nine: '19 x 1.2',
+    ten: '850',
+    eleven: '450',
+  };
+  const theDataCel = [
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+    thedataObject,
+  ];
+
+  const thedataHeader = [
+    'Part No.',
+    'D (mm)',
+    'D (")',
+    'Dia (mm)',
+    'G',
+    'B (mm)',
+    'H (mm)',
+    'h (mm)',
+    'b x s (mm)',
+    'Fa,z (N)',
+    'Pack 1',
+  ];
+
   const item = route.params.item;
   const parentName = route.params.name;
+
+  const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
     setImages(item.images);
   }, []);
+
+  const viewChart = () => {
+    console.log('Chart');
+    setModalVisible(true);
+  };
+
+  const chat = () => {
+    console.log('Chat');
+  };
+  const download = () => {
+    console.log('Download');
+  };
 
   const [images, setImages] = useState([]);
 
@@ -32,6 +98,13 @@ export default function ProductsItemDesc({route, navigation}) {
         />
         <Appbar.Action icon="magnify" color="#4e4e4f" />
       </Appbar.Header>
+
+      <DataModel
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+        theDataCel={theDataCel}
+        thedataHeader={thedataHeader}
+      />
 
       <ScrollView style={{marginBottom: 20}}>
         <SliderBox images={images} dotColor="red" inactiveDotColor="grey" />
@@ -85,9 +158,13 @@ export default function ProductsItemDesc({route, navigation}) {
             marginLeft: 30,
             marginRight: 20,
           }}>
-          <FAButton text="VIEW CHART" icon="arrow-right-drop-circle" />
-          <FAButton text="DOWNLOAD" icon="download" />
-          <FAButton text="LETS CHAT" icon="whatsapp" />
+          <FAButton
+            fabBtnPress={viewChart}
+            text="VIEW CHART"
+            icon="arrow-right-drop-circle"
+          />
+          <FAButton fabBtnPress={download} text="DOWNLOAD" icon="download" />
+          <FAButton fabBtnPress={chat} text="LETS CHAT" icon="whatsapp" />
         </View>
 
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -115,7 +192,6 @@ export default function ProductsItemDesc({route, navigation}) {
             flexDirection: 'row',
             margin: 10,
             alignItems: 'center',
-            // justifyContent: 'space-evenly',
           }}>
           <Text
             style={{
@@ -139,10 +215,12 @@ export default function ProductsItemDesc({route, navigation}) {
           <Text
             key={id}
             style={{
+              fontStyle: 'italic',
               fontSize: 14,
               color: '#515150',
               marginLeft: 10,
               marginRight: 10,
+              fontFamily: 'Rotis-SansSerif-Std_38713',
             }}>
             {cat}
           </Text>

@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Alert, ImageBackground, TouchableOpacity} from 'react-native';
 import styles from './styles';
 
-export default function Splash({navigation: {navigate}}) {
+export default function Splash() {
   return (
     <View style={styles.splash__container}>
       <ImageBackground
@@ -10,7 +10,7 @@ export default function Splash({navigation: {navigate}}) {
         source={require('../../Images/Splash.png')}>
         <TouchableOpacity
           style={styles.splash__btn}
-          onPress={() => navigate('DrawerApp')}
+          // onPress={() => navigate('DrawerApp')}
         />
       </ImageBackground>
     </View>

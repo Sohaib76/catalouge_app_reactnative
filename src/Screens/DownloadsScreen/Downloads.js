@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Image, ScrollView} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 import AppbarHeader from '../../Components/AppbarHeader';
-import {IconButton, Colors, Divider} from 'react-native-paper';
+import {IconButton, Divider} from 'react-native-paper';
+import {green} from '../../Components/PrimaryColors';
 
 export default function Downloads({navigation}) {
   const _navMenu = () => navigation.toggleDrawer();
@@ -43,7 +44,7 @@ export default function Downloads({navigation}) {
                   flex: 1,
                   fontSize: 20,
                   color: '#4e4e4f',
-                  fontFamily: 'ROTIS-SANS-SERIF',
+                  fontFamily: 'Rotis-SansSerif-Std_38713',
                   padding: 20,
                 }}>
                 {doc.text}
@@ -51,7 +52,7 @@ export default function Downloads({navigation}) {
               <IconButton
                 style={{flex: 0}}
                 icon="download"
-                color="#005D40"
+                color={green}
                 size={25}
                 onPress={downloadFunc}
               />

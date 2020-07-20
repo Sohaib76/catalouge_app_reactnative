@@ -215,3 +215,47 @@
 //   'Noise insulating lining, EPDM, black',
 //   'Noise reduction up to 18dB (A).',
 // ];
+
+//----------------------------------------------------
+// function StartupStack() {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator>
+//         <Stack.Screen
+//           name="Splash"
+//           component={Splash}
+//           options={{
+//             // transitionSpec: {
+//             //   open: config,
+//             //   close: config,
+//             // },
+//             headerShown: false,
+//           }}
+//         />
+//         <Stack.Screen
+//           name="DrawerApp"
+//           component={DrawerNavigation}
+//           options={{
+//             transitionSpec: {
+//               open: config,
+//               close: config,
+//             },
+//             headerShown: false,
+//           }}
+//         />
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// }
+
+// options={{
+//   drawerIcon: (config) => (
+//     <Icon
+//       size={23}
+//       name={
+//         Platform.OS === 'android' ? 'md-list' : 'ios-list'
+//       }></Icon>
+//   ),
+// }}
+
+

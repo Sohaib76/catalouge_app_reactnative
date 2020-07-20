@@ -9,8 +9,8 @@ export default function BulletPoints({text}) {
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        // flexWrap: 'wrap',
         marginRight: 15,
+        marginLeft: 15,
       }}>
       <Text style={styles.products__desc__dots}>{'\u2022' + ' '}</Text>
       <Text style={styles.products__desc__points}>{text}</Text>
@@ -19,7 +19,6 @@ export default function BulletPoints({text}) {
 }
 
 import {StyleSheet} from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
 
 const styles = StyleSheet.create({
   products__desc__points: {
