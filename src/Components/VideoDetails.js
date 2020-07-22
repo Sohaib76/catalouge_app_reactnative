@@ -4,7 +4,7 @@ import {Thumbnail} from 'react-native-thumbnail-video';
 
 export default function VideoDetails({name, url, tag, ago, views}) {
   return (
-    <View style={{display: 'flex', flexDirection: 'row', padding: 20}}>
+    <View style={{display: 'flex', flexDirection: 'row', padding: 8}}>
       <View style={{flex: 4}}>
         <Thumbnail
           imageHeight={100}

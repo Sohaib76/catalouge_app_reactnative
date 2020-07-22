@@ -1,8 +1,9 @@
 import React from 'react';
-import {Image} from 'react-native';
+import {View, Image} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {Appbar} from 'react-native-paper';
 import EServiceList from '../../Components/EServiceList';
+import {grey, green} from '../../Components/PrimaryColors';
 
 export default function EngineeringServices({navigation}) {
   const _navMenu = () => navigation.toggleDrawer();
@@ -57,6 +58,8 @@ export default function EngineeringServices({navigation}) {
 
   return (
     <ScrollView>
+      <View style={{height: 2, backgroundColor: 'red', width: '100%'}} />
+
       <Appbar.Header style={{backgroundColor: 'white'}}>
         <Appbar.Action icon="menu" color="#005D40" onPress={_navMenu} />
         <Appbar.Action
@@ -64,12 +67,16 @@ export default function EngineeringServices({navigation}) {
           icon={() => (
             <Image source={require('../../Images/Others/eicon.png')} />
           )}
-          color="#005D40"
+          color={green}
         />
         <Appbar.Content
           style={{marginLeft: -10}}
-          color="#005D40"
+          color={grey}
           title="Engineering Services"
+          titleStyle={{
+            fontFamily: 'AgfaRotisSansSerifExtraBold',
+            fontWeight: 'bold',
+          }}
         />
         <Appbar.Action icon="magnify" color="#005D40" onPress={_navMenu} />
       </Appbar.Header>

@@ -68,7 +68,7 @@ export default class VideosScreen extends PureComponent {
           heading="Videos"
           _navMenu={_navMenu}
         />
-        <ScrollView>
+        <ScrollView style={{paddingTop: 15}}>
           {this.state.videoList.map((video, id) => (
             <VideoDetails
               url={video.videoUrl}

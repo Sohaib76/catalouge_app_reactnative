@@ -17,7 +17,7 @@ export default function ProductsList({name, img, items, navigation}) {
         }}>
         <ListComponent name={name} img={img} />
       </TouchableRipple>
-      <Divider />
+      <Divider style={{elevation: 3}} />
     </>
   );
 }

@@ -19,7 +19,7 @@ export default function HomeCard({navigation, img, text, navigateTo}) {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={pressStatus ? styles.containerPress : styles.container}>
       <View
         style={{
           width: '100%',
@@ -66,10 +66,18 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 15,
     borderColor: '#005D40',
+    borderWidth: 2.5,
+    alignItems: 'center',
+  },
+  containerPress: {
+    backgroundColor: 'white',
+    flex: 1,
+    margin: 10,
+    borderRadius: 15,
+    borderColor: '#005D40',
     borderWidth: 4,
     alignItems: 'center',
   },
-
   text: {
     fontSize: 15,
     flex: 0,

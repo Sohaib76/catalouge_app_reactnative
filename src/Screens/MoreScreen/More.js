@@ -49,14 +49,14 @@ export default function More({navigation}) {
             Contact
           </List.Subheader>
 
-          <TouchableRipple>
+          <TouchableRipple onPress={() => showModal(false)}>
             <List.Item
               titleStyle={{fontSize: 18, color: grey}}
               title="Call-Back"
               left={() => <List.Icon color={green} icon="phone" />}
             />
           </TouchableRipple>
-          <Divider />
+          <Divider style={{elevation: 3}} />
           <TouchableRipple onPress={() => showModal(true)}>
             <List.Item
               titleStyle={{fontSize: 18, color: grey}}
@@ -64,7 +64,7 @@ export default function More({navigation}) {
               left={() => <List.Icon color={green} icon="email-minus" />}
             />
           </TouchableRipple>
-          <Divider />
+          <Divider style={{elevation: 3}} />
         </List.Section>
 
         <List.Section>
@@ -79,7 +79,7 @@ export default function More({navigation}) {
               left={() => <List.Icon color="#3b5998" icon="facebook" />}
             />
           </TouchableRipple>
-          <Divider />
+          <Divider style={{elevation: 3}} />
           <TouchableRipple onPress={() => console.log('Pressed')}>
             <List.Item
               titleStyle={{fontSize: 18, color: grey}}
@@ -101,7 +101,7 @@ export default function More({navigation}) {
               )}
             />
           </TouchableRipple>
-          <Divider />
+          <Divider style={{elevation: 3}} />
           <TouchableRipple onPress={() => console.log('Pressed')}>
             <List.Item
               titleStyle={{fontSize: 18, color: grey}}
@@ -109,7 +109,7 @@ export default function More({navigation}) {
               left={() => <List.Icon color="#2867B2" icon="linkedin" />}
             />
           </TouchableRipple>
-          <Divider />
+          <Divider style={{elevation: 3}} />
         </List.Section>
 
         <List.Section>
@@ -124,15 +124,15 @@ export default function More({navigation}) {
               left={() => <List.Icon color={green} icon="contacts" />}
             />
           </TouchableRipple>
-          <Divider />
-          <TouchableRipple onPress={() => showModal(false)}>
+          <Divider style={{elevation: 3}} />
+          <TouchableRipple onPress={() => console.log('Pressed')}>
             <List.Item
               titleStyle={{fontSize: 18, color: grey}}
               title="Learn more about us"
               left={() => <List.Icon color={green} icon="puzzle" />}
             />
           </TouchableRipple>
-          <Divider />
+          <Divider style={{elevation: 3}} />
         </List.Section>
       </ScrollView>
     </>

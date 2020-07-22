@@ -121,6 +121,8 @@ export default function ProductsItemDesc({route, navigation}) {
 
   return (
     <>
+      <View style={{height: 2, backgroundColor: 'red', width: '100%'}} />
+
       <Appbar.Header style={{backgroundColor: 'white'}}>
         <Appbar.Action
           icon="keyboard-backspace"
@@ -240,44 +242,46 @@ export default function ProductsItemDesc({route, navigation}) {
           />
         </View>
 
-        <View
-          style={{
-            flexDirection: 'row',
-            margin: 10,
-            alignItems: 'center',
-          }}>
-          <Text
+        <View style={{padding: 10}}>
+          <View
             style={{
-              fontWeight: 'bold',
-              fontSize: 18,
-              color: '#120766',
+              flexDirection: 'row',
+              margin: 10,
+              alignItems: 'center',
             }}>
-            Category:
-          </Text>
-          <Text
-            style={{
-              fontSize: 15,
-              color: '#515150',
-              marginLeft: 5,
-            }}>
-            {parentName}
-          </Text>
-        </View>
+            <Text
+              style={{
+                fontWeight: 'bold',
+                fontSize: 18,
+                color: '#120766',
+              }}>
+              Category:
+            </Text>
+            <Text
+              style={{
+                fontSize: 15,
+                color: '#515150',
+                marginLeft: 5,
+              }}>
+              {parentName}
+            </Text>
+          </View>
 
-        {item.category.map((cat, id) => (
-          <Text
-            key={id}
-            style={{
-              fontStyle: 'italic',
-              fontSize: 14,
-              color: '#515150',
-              marginLeft: 10,
-              marginRight: 10,
-              fontFamily: 'Rotis-SansSerif-Std_38713',
-            }}>
-            {cat}
-          </Text>
-        ))}
+          {item.category.map((cat, id) => (
+            <Text
+              key={id}
+              style={{
+                fontStyle: 'italic',
+                fontSize: 14,
+                color: '#515150',
+                marginLeft: 10,
+                marginRight: 10,
+                fontFamily: 'Rotis-SansSerif-Std_38713',
+              }}>
+              {cat}
+            </Text>
+          ))}
+        </View>
       </ScrollView>
     </>
   );

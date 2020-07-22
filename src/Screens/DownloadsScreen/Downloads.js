@@ -38,13 +38,19 @@ export default function Downloads({navigation}) {
       <ScrollView>
         {downloadsList.map((doc, id) => (
           <View key={id}>
-            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                backgroundColor: 'white',
+              }}>
               <Text
                 style={{
                   flex: 1,
                   fontSize: 20,
                   color: '#4e4e4f',
-                  fontFamily: 'Rotis-SansSerif-Std_38713',
+                  fontFamily: 'AgfaRotisSansSerifExtraBold',
+                  // fontFamily: 'Rotis-SansSerif-Std_38713',
                   padding: 20,
                 }}>
                 {doc.text}
@@ -57,7 +63,7 @@ export default function Downloads({navigation}) {
                 onPress={downloadFunc}
               />
             </View>
-            <Divider style={{backgroundColor: 'black'}} />
+            <Divider style={{backgroundColor: 'black', elevation: 3}} />
           </View>
         ))}
       </ScrollView>

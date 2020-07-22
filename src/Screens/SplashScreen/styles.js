@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
 
   splash__container: {
-    backgroundColor: 'black',
+    // backgroundColor: 'black',
   },
 });
 

@@ -6,8 +6,8 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <StatusBar backgroundColor="#005D40" barStyle="dark-content" />
-
+        <StatusBar backgroundColor="#fff" barStyle="dark-content" />
+        {/* <StatusBar backgroundColor="#005D40" barStyle="dark-content" /> */}
         <DrawerNavigation />
       </>
     );

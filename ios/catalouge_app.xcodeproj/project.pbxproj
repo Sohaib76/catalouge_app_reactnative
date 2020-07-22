@@ -40,6 +40,7 @@
 		7FF4F9BBFEF5401F8EA4B63E /* ROTISSANSSERIFSTD.otf in Resources */ = {isa = PBXBuildFile; fileRef = F477FCF90DCD4714ABA81D4B /* ROTISSANSSERIFSTD.otf */; };
 		ADFF55D3F11443F18A08904C /* Rotis Sans Serif 55.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 931BE1342C694273B8803DC3 /* Rotis Sans Serif 55.ttf */; };
 		8B62F0412CB44462824FF562 /* Rotis-SansSerif-Std_38713.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50DD32CEC2EB426B85451D22 /* Rotis-SansSerif-Std_38713.ttf */; };
+		9D4FAA4BD20A405DB7491868 /* AgfaRotisSansSerifExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 506088F6D6714BE38A916E2B /* AgfaRotisSansSerifExtraBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		F477FCF90DCD4714ABA81D4B /* ROTISSANSSERIFSTD.otf */ = {isa = PBXFileReference; name = "ROTISSANSSERIFSTD.otf"; path = "../src/assets/fonts/ROTISSANSSERIFSTD.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		931BE1342C694273B8803DC3 /* Rotis Sans Serif 55.ttf */ = {isa = PBXFileReference; name = "Rotis Sans Serif 55.ttf"; path = "../src/assets/fonts/Rotis Sans Serif 55.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		50DD32CEC2EB426B85451D22 /* Rotis-SansSerif-Std_38713.ttf */ = {isa = PBXFileReference; name = "Rotis-SansSerif-Std_38713.ttf"; path = "../src/assets/fonts/Rotis-SansSerif-Std_38713.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		506088F6D6714BE38A916E2B /* AgfaRotisSansSerifExtraBold.ttf */ = {isa = PBXFileReference; name = "AgfaRotisSansSerifExtraBold.ttf"; path = "../src/assets/fonts/AgfaRotisSansSerifExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 				F477FCF90DCD4714ABA81D4B /* ROTISSANSSERIFSTD.otf */,
 				931BE1342C694273B8803DC3 /* Rotis Sans Serif 55.ttf */,
 				50DD32CEC2EB426B85451D22 /* Rotis-SansSerif-Std_38713.ttf */,
+				506088F6D6714BE38A916E2B /* AgfaRotisSansSerifExtraBold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				7FF4F9BBFEF5401F8EA4B63E /* ROTISSANSSERIFSTD.otf in Resources */,
 				ADFF55D3F11443F18A08904C /* Rotis Sans Serif 55.ttf in Resources */,
 				8B62F0412CB44462824FF562 /* Rotis-SansSerif-Std_38713.ttf in Resources */,
+				9D4FAA4BD20A405DB7491868 /* AgfaRotisSansSerifExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

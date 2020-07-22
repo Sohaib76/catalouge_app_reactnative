@@ -21,6 +21,8 @@ export default function ProductsListItems({route, navigation}) {
 
   return (
     <>
+      <View style={{height: 2, backgroundColor: 'red', width: '100%'}} />
+
       <Appbar.Header style={{backgroundColor: 'white'}}>
         <Appbar.Action
           icon="keyboard-backspace"
@@ -49,7 +51,7 @@ export default function ProductsListItems({route, navigation}) {
               }}>
               <ListComponent name={item.name} img={item.iconImage} />
             </TouchableRipple>
-            <Divider />
+            <Divider style={{elevation: 3}} />
           </View>
         ))}
       </ScrollView>

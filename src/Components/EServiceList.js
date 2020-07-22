@@ -15,6 +15,7 @@ export default function EServiceList({text, img, desc, navigation}) {
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
+          backgroundColor: 'white',
         }}>
         <>
           <Image
@@ -29,16 +30,19 @@ export default function EServiceList({text, img, desc, navigation}) {
           <Text
             style={{
               flex: 1,
-              fontSize: 17,
+              fontSize: 19,
               color: grey,
-              fontFamily: 'Rotis Sans Serif 55',
+              fontFamily: 'AgfaRotisSansSerifExtraBold',
+              //Rotis-SansSerif-Std_38713
+              //'Rotis Sans Serif 55'
+              //AgfaRotisSansSerifExtraBold
               marginRight: 10,
             }}>
             {text}
           </Text>
         </>
       </TouchableRipple>
-      <Divider style={{backgroundColor: 'black'}} />
+      <Divider style={{backgroundColor: 'black', elevation: 3}} />
     </>
   );
 }

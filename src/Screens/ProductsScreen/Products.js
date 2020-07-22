@@ -8,7 +8,7 @@ export default function Products({navigation}) {
 
   const _navMenu = () => navigation.toggleDrawer();
 
-  const imageLink = require('../../Images/productsImages/drawable-xxxhdpi/BIS-Clamps-Lined-Split-Clamp.png');
+  const imageLink = require('../../Images/productsImages/drawable-xxhdpi/BIS-Clamps-Lined-Split-Clamp.png');
 
   const imageLink1 = require('../../Images/productsImages/clampother.png');
   const imageLink2 = require('../../Images/productsImages/BIS-Clamps-Lined-Split-Clamp.png');
