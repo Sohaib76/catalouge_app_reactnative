@@ -3,9 +3,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import ProductsList from '../../Components/ProductsList';
 import AppbarHeader from '../../Components/AppbarHeader';
 
-export default function Favourites({navigation}) {
-  // const fav = route.params.fav;
-
+export default function ProductsFav({navigation}) {
   const _navMenu = () => navigation.toggleDrawer();
 
   const imageLink = require('../../Images/productsImages/drawable-xxxhdpi/BIS-Clamps-Lined-Split-Clamp.png');

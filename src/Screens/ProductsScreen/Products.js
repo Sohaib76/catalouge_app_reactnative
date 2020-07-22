@@ -4,6 +4,8 @@ import ProductsList from '../../Components/ProductsList';
 import AppbarHeader from '../../Components/AppbarHeader';
 
 export default function Products({navigation}) {
+  // const fav = route.params.fav;
+
   const _navMenu = () => navigation.toggleDrawer();
 
   const imageLink = require('../../Images/productsImages/drawable-xxxhdpi/BIS-Clamps-Lined-Split-Clamp.png');
@@ -34,6 +36,7 @@ export default function Products({navigation}) {
       'With M6 Side Nuts available on request.',
       'This series replaces part number DMC115 series.',
     ],
+    isFavourite: false,
   };
 
   const theproductsItems = [
@@ -61,6 +64,7 @@ export default function Products({navigation}) {
         'With M6 Side Nuts available on request.',
         'This series replaces part number DMC115 series.',
       ],
+      isFavourite: false,
     },
     theObjectOfItems,
     theObjectOfItems,

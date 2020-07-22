@@ -5,6 +5,7 @@ import styles from './styles';
 import {green, grey} from '../../Components/PrimaryColors';
 import AppbarHeader from '../../Components/AppbarHeader';
 import InfoModal from './InfoModal';
+import {View, Text, Image} from 'react-native';
 
 export default function More({navigation}) {
   const _navMenu = () => navigation.toggleDrawer();
@@ -83,7 +84,21 @@ export default function More({navigation}) {
             <List.Item
               titleStyle={{fontSize: 18, color: grey}}
               title="Instagram"
-              left={() => <List.Icon color="#C13584" icon="instagram" />}
+              left={() => (
+                <List.Icon
+                  color="#C13584"
+                  icon={() => (
+                    <Image
+                      style={{
+                        width: 25,
+                        height: 25,
+                        borderRadius: 20,
+                      }}
+                      source={require('../../Images/Others/insta.png')}
+                    />
+                  )}
+                />
+              )}
             />
           </TouchableRipple>
           <Divider />

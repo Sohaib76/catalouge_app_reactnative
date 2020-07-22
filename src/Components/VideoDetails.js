@@ -20,8 +20,12 @@ export default function VideoDetails({name, url, tag, ago, views}) {
           marginLeft: 10,
           paddingRight: 20,
         }}>
-        <Text style={{fontSize: 16}}>{name}</Text>
-        <Text style={{color: '#515150'}}>{tag}</Text>
+        <Text style={{fontSize: 16}} ellipsizeMode="tail" numberOfLines={2}>
+          {name}
+        </Text>
+        <Text style={{color: '#515150'}} ellipsizeMode="tail" numberOfLines={1}>
+          {tag}
+        </Text>
         <View
           style={{
             display: 'flex',

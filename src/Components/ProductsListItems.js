@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View} from 'react-native';
 import {TouchableOpacity} from 'react-native';
 import ListComponent from './ListComponent';
@@ -9,9 +9,16 @@ export default function ProductsListItems({route, navigation}) {
   const items = route.params.items;
   const name = route.params.name;
 
+  const [fav, setfav] = useState(items[0].isFavourite);
+
+  const markFavourite = () => {
+    setfav(!fav);
+  };
+
   {
-    console.log('Product List Item Render');
+    console.log('Product List Item Render', fav);
   }
+
   return (
     <>
       <Appbar.Header style={{backgroundColor: 'white'}}>
@@ -29,7 +36,11 @@ export default function ProductsListItems({route, navigation}) {
             <TouchableRipple
               rippleColor="rgba(0, 0, 0, .82)"
               onPress={() =>
-                navigation.navigate('ProductsItemDesc', {item, name})
+                navigation.navigate('ProductsItemDesc', {
+                  item,
+                  name,
+                  // markFavourite,
+                })
               }
               style={{
                 display: 'flex',

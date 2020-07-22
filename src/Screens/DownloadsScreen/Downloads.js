@@ -57,7 +57,7 @@ export default function Downloads({navigation}) {
                 onPress={downloadFunc}
               />
             </View>
-            <Divider />
+            <Divider style={{backgroundColor: 'black'}} />
           </View>
         ))}
       </ScrollView>

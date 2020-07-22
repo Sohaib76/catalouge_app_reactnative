@@ -1,12 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text} from 'react-native';
 import {SliderBox} from 'react-native-image-slider-box';
-import {Appbar} from 'react-native-paper';
+import {Appbar, IconButton} from 'react-native-paper';
 
 import BulletPoints from '../../Components/BulletPoints.js';
 import {ScrollView} from 'react-native-gesture-handler';
 import FAButton from '../../Components/FAButton.js';
 import DataModel from './DataModel.js';
+import {green} from '../../Components/PrimaryColors';
+
+// import {AsyncStorage} from 'react-native';
 
 export default function ProductsItemDesc({route, navigation}) {
   const thedataObject = {
@@ -62,6 +65,7 @@ export default function ProductsItemDesc({route, navigation}) {
 
   const item = route.params.item;
   const parentName = route.params.name;
+  // const markFavourite = route.params.markFavourite;
 
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -82,6 +86,38 @@ export default function ProductsItemDesc({route, navigation}) {
   };
 
   const [images, setImages] = useState([]);
+
+  const [starePress, setStartPress] = useState(item.isFavourite);
+
+  // const _retrieveData = async () => {
+  //   try {
+  //     const value = await AsyncStorage.getItem('starePress');
+  //     if (value !== null) {
+  //       // Our data is fetched successfully
+  //       return value;
+  //     }
+  //   } catch (error) {
+  //     // Error retrieving data
+  //   }
+  // };
+
+  // const _storeData = async () => {
+  //   try {
+  //     await AsyncStorage.setItem('starePress', !starePress);
+  //   } catch (error) {
+  //     // Error saving data
+  //   }
+  // };
+  // useEffect(() => {
+  //   setStartPress(_retrieveData);
+  // }, []);
+
+  const onPressStarred = () => {
+    console.log('Pressed');
+    // _storeData;
+    setStartPress(!starePress);
+    // markFavourite;
+  };
 
   return (
     <>
@@ -107,7 +143,24 @@ export default function ProductsItemDesc({route, navigation}) {
       />
 
       <ScrollView style={{marginBottom: 20}}>
-        <SliderBox images={images} dotColor="red" inactiveDotColor="grey" />
+        <View
+          style={{
+            backgroundColor: 'white',
+            flexDirection: 'row',
+            paddingRight: 20,
+            justifyContent: 'flex-end',
+          }}>
+          <IconButton
+            style={{margin: 0}}
+            icon={starePress ? 'star' : 'star-outline'}
+            color={green}
+            size={30}
+            onPress={onPressStarred}
+          />
+        </View>
+        <View style={{backgroundColor: 'white'}}>
+          <SliderBox images={images} dotColor="red" inactiveDotColor="grey" />
+        </View>
 
         <Text
           style={{

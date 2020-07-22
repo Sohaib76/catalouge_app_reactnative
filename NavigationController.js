@@ -20,6 +20,7 @@ import EServiceDesc from './src/Screens/ServicesScreen/EServiceDesc';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {View} from 'react-native';
 import CustomDrawerContent from './src/Components/CustomDrawerContent';
+import ProductsFav from './src/Screens/ProductsScreen/ProductsFav';
 
 const Stack = createStackNavigator();
 
@@ -73,6 +74,7 @@ function ProductsStackNavigator() {
       <Stack.Screen name="Products" component={Products} />
       <Stack.Screen name="ProductsListItems" component={ProductsListItems} />
       <Stack.Screen name="ProductsItemDesc" component={ProductsItemDesc} />
+      {/* <Stack.Screen name="ProductsFav" component={ProductsFav} /> */}
     </Stack.Navigator>
   );
 }
@@ -87,8 +89,13 @@ function ContactStackNavigator() {
 
 function FavouritesStackNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen name="Favourites" component={Favourites} />
+      <Stack.Screen name="ProductsListItems" component={ProductsListItems} />
+      <Stack.Screen name="ProductsItemDesc" component={ProductsItemDesc} />
     </Stack.Navigator>
   );
 }
@@ -145,6 +152,7 @@ function DrawerNavigation() {
         <Drawwer.Screen name="Downloads" component={DownloadsStackNavigator} />
         <Drawwer.Screen name="Videos" component={VideosStackNavigator} />
         <Drawwer.Screen name="Contact Us" component={MoreStackNavigator} />
+        {/* <Drawwer.Screen name="ProductsFav" component={ProductsStackNavigator} /> */}
         <Drawwer.Screen
           name="Favourites"
           component={FavouritesStackNavigator}

@@ -20,10 +20,10 @@ export default function EServiceList({text, img, desc, navigation}) {
           <Image
             source={img}
             style={{
-              width: 80,
-              height: 80,
+              width: 70,
+              height: 70,
               flex: 0,
-              margin: 16,
+              margin: 10, //16
             }}
           />
           <Text
@@ -38,7 +38,7 @@ export default function EServiceList({text, img, desc, navigation}) {
           </Text>
         </>
       </TouchableRipple>
-      <Divider />
+      <Divider style={{backgroundColor: 'black'}} />
     </>
   );
 }

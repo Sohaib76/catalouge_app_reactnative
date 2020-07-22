@@ -42,7 +42,7 @@ const InfoModal = ({modalVisible, setModalVisible, renderMessage, title}) => {
             <View style={styles.inputView}>
               <Text>Company Name</Text>
               <TextInput
-                placeholder="Company Name"
+                placeholder="XYZ Digital"
                 style={{height: 40}}
                 onChangeText={(text) => setCompany(text)}
                 value={company}

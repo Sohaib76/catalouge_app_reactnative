@@ -57,18 +57,16 @@ export default function HomeScreen({navigation}) {
             <HomeCard
               img={require('../../Images/homeImages/logo.png')}
               text="PRODUCTS"
-              txtColor="white"
-              bgColor="#005D40"
               navigation={navigation}
               navigateTo="Products"
+              fav={false}
             />
             <HomeCard
               img={require('../../Images/homeImages/location.png')}
               text="LOCATIONS"
-              txtColor="#005D40"
-              bgColor="white"
               navigation={navigation}
               navigateTo="Locations"
+              fav={false}
             />
           </View>
 
@@ -81,18 +79,17 @@ export default function HomeScreen({navigation}) {
             <HomeCard
               img={require('../../Images/homeImages/star.png')}
               text="FAVOURITE LIST"
-              txtColor="#005D40"
-              bgColor="white"
               navigation={navigation}
               navigateTo="Favourites"
+              fav={true}
+              //Favourites
             />
             <HomeCard
               img={require('../../Images/homeImages/download.png')}
               text="DOWNLOAD"
-              txtColor="#005D40"
-              bgColor="white"
               navigation={navigation}
               navigateTo="Downloads"
+              fav={false}
             />
           </View>
 
@@ -105,18 +102,16 @@ export default function HomeScreen({navigation}) {
             <HomeCard
               img={require('../../Images/homeImages/call-center.png')}
               text="CONTACT US"
-              txtColor="#005D40"
-              bgColor="white"
               navigation={navigation}
               navigateTo="Contact Us"
+              fav={false}
             />
             <HomeCard
               img={require('../../Images/homeImages/pair-of-gears.png')}
               text="ENGINEERING SERVICES"
-              txtColor="#005D40"
-              bgColor="white"
               navigation={navigation}
               navigateTo="Engineering Services"
+              fav={false}
             />
           </View>
         </View>

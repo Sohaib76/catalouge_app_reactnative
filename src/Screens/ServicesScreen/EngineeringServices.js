@@ -48,6 +48,11 @@ export default function EngineeringServices({navigation}) {
       desc: theDummyText,
       image: theImageLink,
     },
+    {
+      text: 'Engineering Service 8',
+      desc: theDummyText,
+      image: theImageLink,
+    },
   ];
 
   return (
