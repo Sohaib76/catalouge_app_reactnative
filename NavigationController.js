@@ -21,6 +21,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {View} from 'react-native';
 import CustomDrawerContent from './src/Components/CustomDrawerContent';
 import ProductsFav from './src/Screens/ProductsScreen/ProductsFav';
+import VideosYou from './src/Screens/VideosScreen/VideosYou';
 
 const Stack = createStackNavigator();
 
@@ -55,7 +56,8 @@ function VideosStackNavigator() {
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name="Videos" component={VideosScreen} />
+      <Stack.Screen name="Videos" component={VideosYou} />
+      {/* VideosScreen */}
     </Stack.Navigator>
   );
 }
