@@ -7,9 +7,10 @@ export default function ListComponent({name, img}) {
       <Image
         source={img}
         style={{
-          width: 100,
-          height: 100,
+          width: 80,
+          height: 80,
           flex: 0,
+          marginRight: 8,
         }}
       />
       <Text

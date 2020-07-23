@@ -10,6 +10,7 @@ const API_KEY = 'AIzaSyA_Zym0Y8pogUylmaxgo7a_3NvUj7UVrqQ';
 export default class VideosYou extends Component {
   componentDidMount() {
     this.fetchPlaylistData();
+    console.disableYellowBox = true;
   }
   fetchPlaylistData = async () => {
     const response = await fetch(
@@ -59,18 +60,24 @@ export default class VideosYou extends Component {
     return (
       <View style={{flex: 1}}>
         <AppbarHeader iconName="play-circle" heading="Videos" />
-        <ScrollView style={{paddingTop: 15}}>
-          {this.state.theVideosList.map((video, id) => (
-            <VideoDetails
-              url={video.videoUrl}
-              name={video.name}
-              tag={video.tag}
-              views={video.views}
-              ago={video.ago}
-              key={id}
-            />
-          ))}
-        </ScrollView>
+        {this.state.theVideosList ? (
+          <ScrollView style={{paddingTop: 15}}>
+            {this.state.theVideosList.map((video, id) => (
+              <VideoDetails
+                url={video.videoUrl}
+                name={video.name}
+                tag={video.tag}
+                views={video.views}
+                ago={video.ago}
+                key={id}
+              />
+            ))}
+          </ScrollView>
+        ) : (
+          <Text style={{textAlign: 'circle', fontSize: 20}}>
+            Youtube Api Quota Reached
+          </Text>
+        )}
       </View>
     );
   }

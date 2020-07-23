@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 // import MapView from 'react-native-maps';
 import {Picker} from '@react-native-community/picker';
 import {Searchbar} from 'react-native-paper';
@@ -7,17 +7,29 @@ import {grey, green} from '../../Components/PrimaryColors';
 import AppbarHeader from '../../Components/AppbarHeader';
 import {ScrollView} from 'react-native-gesture-handler';
 
+import MapView, {PROVIDER_GOOGLE, Callout} from 'react-native-maps';
+import {Marker} from 'react-native-maps';
+
 export default function Locations({navigation}) {
-  const _navMenu = () => navigation.toggleDrawer();
+  const [lat, setlat] = useState(24.924415);
+  const [long, setlong] = useState(55.057513);
+  // const _navMenu = () => navigation.toggleDrawer();
 
   const [selectedValue, setSelectedValue] = useState('Search');
   const [searchQuery, setSearchQuery] = useState('');
-
+  //https://github.com/itzpradip/Food-Finder-React-Native-App/blob/master/screens/MapTestScreen.js
   const onChangeSearch = (query) => setSearchQuery(query);
+
+  const dropDownClicked = (itemValue) => {
+    setSelectedValue(itemValue);
+    setlat(24.924415);
+    setlong(55.06);
+  };
+
   return (
     <>
       <AppbarHeader
-        _navMenu={_navMenu}
+        // _navMenu={_navMenu}
         heading={selectedValue}
         iconName="map-marker"
       />
@@ -45,7 +57,7 @@ export default function Locations({navigation}) {
             }}
             mode="dropdown"
             onValueChange={(itemValue, itemIndex) =>
-              setSelectedValue(itemValue)
+              dropDownClicked(itemValue)
             }>
             <Picker.Item
               color={grey}
@@ -70,15 +82,34 @@ export default function Locations({navigation}) {
           />
         </View>
 
-        <View
+        {/* <View
           style={{
             resizeMode: 'stretch',
             height: 420,
             justifyContent: 'center',
             alignItems: 'center',
-          }}>
-          <Image source={require('../../Images/Others/map.png')} />
+          }}> */}
+        <View style={{flex: 1, backgroundColor: 'red', height: 380}}>
+          <MapView
+            provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+            style={styles.map}
+            region={{
+              latitude: lat,
+              longitude: long,
+              latitudeDelta: 0.0015, //0.015
+              longitudeDelta: 0.0121,
+            }}>
+            <Marker
+              coordinate={{
+                latitude: lat,
+                longitude: long,
+              }}
+              title={'Hira Walraven LLC'}
+              // description={'desc'}
+            />
+          </MapView>
         </View>
+        {/* </View> */}
         <View style={{margin: 15, marginLeft: 30}}>
           <Text
             style={{
@@ -121,3 +152,21 @@ export default function Locations({navigation}) {
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    ...StyleSheet.absoluteFillObject,
+    height: 400,
+    width: 400,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  map: {
+    height: '100%',
+    // resizeMode: 'stretch',
+    // height: 420,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // ...StyleSheet.absoluteFillObject,
+  },
+});

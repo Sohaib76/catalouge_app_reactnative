@@ -48,6 +48,7 @@ export default function ProductsListItems({route, navigation}) {
                 display: 'flex',
                 flexDirection: 'row',
                 alignItems: 'center',
+                padding: 10,
               }}>
               <ListComponent name={item.name} img={item.iconImage} />
             </TouchableRipple>

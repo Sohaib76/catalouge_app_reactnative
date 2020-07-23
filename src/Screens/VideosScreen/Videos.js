@@ -3,12 +3,6 @@ import {ScrollView} from 'react-native-gesture-handler';
 import VideoDetails from '../../Components/VideoDetails';
 import AppbarHeader from '../../Components/AppbarHeader';
 
-//https://pusher.com/tutorials/youtube-react-native
-//For fetching videos from a playlist
-
-// https://developers.google.com/youtube/v3/docs/videos
-// https://stackoverflow.com/questions/18953499/youtube-api-to-fetch-all-videos-on-a-channel
-
 const theVideosList = [
   {
     videoUrl: 'https://www.youtube.com/watch?v=VAAwDB_Q6p0',

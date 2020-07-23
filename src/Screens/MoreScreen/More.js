@@ -5,7 +5,7 @@ import styles from './styles';
 import {green, grey} from '../../Components/PrimaryColors';
 import AppbarHeader from '../../Components/AppbarHeader';
 import InfoModal from './InfoModal';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, Linking} from 'react-native';
 
 export default function More({navigation}) {
   const _navMenu = () => navigation.toggleDrawer();
@@ -117,15 +117,19 @@ export default function More({navigation}) {
             Further Information
           </List.Subheader>
 
-          <TouchableRipple onPress={() => console.log('Pressed')}>
+          <TouchableRipple
+            onPress={() =>
+              Linking.openURL('https://hirawalraven.com/careers/')
+            }>
             <List.Item
               titleStyle={{fontSize: 18, color: grey}}
-              title="Carriers"
+              title="Careers"
               left={() => <List.Icon color={green} icon="contacts" />}
             />
           </TouchableRipple>
           <Divider style={{elevation: 3}} />
-          <TouchableRipple onPress={() => console.log('Pressed')}>
+          <TouchableRipple
+            onPress={() => Linking.openURL('https://hirawalraven.com')}>
             <List.Item
               titleStyle={{fontSize: 18, color: grey}}
               title="Learn more about us"

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Linking} from 'react-native';
 import {SliderBox} from 'react-native-image-slider-box';
 import {Appbar, IconButton} from 'react-native-paper';
 
@@ -79,7 +79,9 @@ export default function ProductsItemDesc({route, navigation}) {
   };
 
   const chat = () => {
-    console.log('Chat');
+    Linking.openURL(
+      'https://api.whatsapp.com/send?phone=971523171864&text=Hi,%20I%20want%20to%20know%20more%20about%20Hira%20Walraven%20products.',
+    );
   };
   const download = () => {
     console.log('Download');
