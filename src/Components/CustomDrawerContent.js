@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, Linking} from 'react-native';
 import {Drawer, Divider, FAB, IconButton, Button} from 'react-native-paper';
 import {green} from './PrimaryColors';
 
@@ -116,9 +116,21 @@ export default function CustomDrawerContent({navigation}) {
           small
           style={{backgroundColor: '#3b5998'}}
           icon="facebook"
-          onPress={() => console.log('Pressed')}
+          onPress={() =>
+            Linking.openURL('https://www.facebook.com/HiraWalraven/')
+          }
         />
         <FAB
+          style={{backgroundColor: 'red'}}
+          small
+          icon="youtube"
+          onPress={() =>
+            Linking.openURL(
+              'https://www.youtube.com/channel/UCFChd_w024Jyn97hdjaB8kQ/',
+            )
+          }
+        />
+        {/* <FAB
           style={{
             backgroundColor: '#FCAF45',
           }}
@@ -138,13 +150,15 @@ export default function CustomDrawerContent({navigation}) {
             />
           )}
           onPress={() => console.log('Pressed')}
-        />
+        /> */}
 
         <FAB
           style={{backgroundColor: '#2867B2'}}
           small
           icon="linkedin"
-          onPress={() => console.log('Pressed')}
+          onPress={() =>
+            Linking.openURL('https://www.linkedin.com/company/hira-walraven/')
+          }
         />
       </View>
     </>

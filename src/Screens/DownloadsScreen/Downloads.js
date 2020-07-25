@@ -61,7 +61,17 @@ export default function Downloads({navigation}) {
     },
   ];
 
-  const [downloadsList, setDownloadsList] = useState(theDownloadsLst);
+  useEffect(() => {
+    fetch('https://roundcomm.com/demos/hirawalraven/api/download/')
+      .then((response) => response.json())
+      .then((res) => {
+        console.log(res.data);
+        setDownloadsList(res.data);
+        console.log('state', downloadsList);
+      });
+  }, [downloadsList]);
+
+  const [downloadsList, setDownloadsList] = useState();
 
   const downloadFunc = (url) => {
     //   let dirs = RNFetchBlob.fs.dirs;
@@ -92,38 +102,42 @@ export default function Downloads({navigation}) {
         iconName="download"
         heading="Download"
       />
-      <ScrollView>
-        {downloadsList.map((doc, id) => (
-          <View key={id}>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                backgroundColor: 'white',
-              }}>
-              <Text
+      {downloadsList ? (
+        <ScrollView>
+          {downloadsList.map((doc, id) => (
+            <View key={doc.id}>
+              <View
                 style={{
-                  flex: 1,
-                  fontSize: 20,
-                  color: '#4e4e4f',
-                  fontFamily: 'AgfaRotisSansSerifExtraBold',
-                  // fontFamily: 'Rotis-SansSerif-Std_38713',
-                  padding: 20,
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  backgroundColor: 'white',
                 }}>
-                {doc.text}
-              </Text>
-              <IconButton
-                style={{flex: 0}}
-                icon="download"
-                color={green}
-                size={25}
-                onPress={() => downloadFunc(doc.url)}
-              />
+                <Text
+                  style={{
+                    flex: 1,
+                    fontSize: 20,
+                    color: '#4e4e4f',
+                    fontFamily: 'AgfaRotisSansSerifExtraBold',
+                    // fontFamily: 'Rotis-SansSerif-Std_38713',
+                    padding: 20,
+                  }}>
+                  {doc.title}
+                </Text>
+                <IconButton
+                  style={{flex: 0}}
+                  icon="download"
+                  color={green}
+                  size={25}
+                  onPress={() => downloadFunc(doc.file)}
+                />
+              </View>
+              <Divider style={{backgroundColor: 'black', elevation: 3}} />
             </View>
-            <Divider style={{backgroundColor: 'black', elevation: 3}} />
-          </View>
-        ))}
-      </ScrollView>
+          ))}
+        </ScrollView>
+      ) : (
+        <Text>Loading</Text>
+      )}
     </>
   );
 }

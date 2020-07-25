@@ -19,7 +19,7 @@ export default function EServiceList({text, img, desc, navigation}) {
         }}>
         <>
           <Image
-            source={img}
+            source={{uri: img}}
             style={{
               width: 70,
               height: 70,

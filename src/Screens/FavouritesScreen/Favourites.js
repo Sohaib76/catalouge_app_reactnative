@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {ScrollView} from 'react-native-gesture-handler';
 import ProductsList from '../../Components/ProductsList';
 import AppbarHeader from '../../Components/AppbarHeader';
@@ -125,7 +125,16 @@ export default function Favourites({navigation}) {
     },
   ];
   console.log('Products Render');
-  const [products, setProducts] = useState(productsList);
+  const [products, setProducts] = useState();
+
+  useEffect(() => {
+    fetch('https://roundcomm.com/demos/hirawalraven/api/category/')
+      .then((response) => response.json())
+      .then((res) => {
+        console.log(res.data);
+        setProducts(res.data);
+      });
+  }, []);
 
   return (
     <>
@@ -135,17 +144,22 @@ export default function Favourites({navigation}) {
         _navMenu={_navMenu}
       />
 
-      <ScrollView style={{backgroundColor: 'white'}}>
-        {products.map((product, id) => (
-          <ProductsList
-            key={id}
-            name={product.name}
-            img={product.image}
-            items={product.items}
-            navigation={navigation}
-          />
-        ))}
-      </ScrollView>
+      {products ? (
+        <ScrollView style={{backgroundColor: 'white'}}>
+          {products.map((product, id) => (
+            <ProductsList
+              key={product.id}
+              name={product.name}
+              img={product.image}
+              items={product.products}
+              navigation={navigation}
+              //  click={product.click}
+            />
+          ))}
+        </ScrollView>
+      ) : (
+        <Text>Loading</Text>
+      )}
     </>
   );
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Image} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Image, Text} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {Appbar} from 'react-native-paper';
 import EServiceList from '../../Components/EServiceList';
@@ -56,6 +56,17 @@ export default function EngineeringServices({navigation}) {
     },
   ];
 
+  useEffect(() => {
+    fetch('https://roundcomm.com/demos/hirawalraven/api/engineering-service/')
+      .then((response) => response.json())
+      .then((res) => {
+        console.log(res.data);
+        setEngineeringServiceList(res.data);
+      });
+  }, [engineeringServiceList]);
+
+  const [engineeringServiceList, setEngineeringServiceList] = useState();
+
   return (
     <ScrollView>
       <View style={{height: 2, backgroundColor: 'red', width: '100%'}} />
@@ -80,15 +91,22 @@ export default function EngineeringServices({navigation}) {
         />
         <Appbar.Action icon="magnify" color="#005D40" onPress={_navMenu} />
       </Appbar.Header>
-      {theServicesList.map((service, id) => (
-        <EServiceList
-          navigation={navigation}
-          key={id}
-          text={service.text}
-          img={service.image}
-          desc={service.desc}
-        />
-      ))}
+      {engineeringServiceList ? (
+        engineeringServiceList.map((service, id) => (
+          <EServiceList
+            navigation={navigation}
+            key={id}
+            text={service.title}
+            img={service.image}
+            desc={service.description
+              .replace('<p>', '')
+              .replace('</p>', '')
+              .replace('<br>', '')}
+          />
+        ))
+      ) : (
+        <Text>Loading</Text>
+      )}
     </ScrollView>
   );
 }

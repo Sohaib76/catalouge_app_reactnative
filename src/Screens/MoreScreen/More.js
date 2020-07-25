@@ -72,7 +72,10 @@ export default function More({navigation}) {
             Connect with us
           </List.Subheader>
 
-          <TouchableRipple onPress={() => console.log('Pressed')}>
+          <TouchableRipple
+            onPress={() =>
+              Linking.openURL('https://www.facebook.com/HiraWalraven/')
+            }>
             <List.Item
               titleStyle={{fontSize: 18, color: grey}}
               title="Facebook"
@@ -80,8 +83,18 @@ export default function More({navigation}) {
             />
           </TouchableRipple>
           <Divider style={{elevation: 3}} />
-          <TouchableRipple onPress={() => console.log('Pressed')}>
+          <TouchableRipple
+            onPress={() =>
+              Linking.openURL(
+                'https://www.youtube.com/channel/UCFChd_w024Jyn97hdjaB8kQ/',
+              )
+            }>
             <List.Item
+              titleStyle={{fontSize: 18, color: grey}}
+              title="Youtube"
+              left={() => <List.Icon color="red" icon="youtube" />}
+            />
+            {/* <List.Item
               titleStyle={{fontSize: 18, color: grey}}
               title="Instagram"
               left={() => (
@@ -99,10 +112,15 @@ export default function More({navigation}) {
                   )}
                 />
               )}
-            />
+            /> */}
+            {/* youtube */}
+            {/* https://www.youtube.com/channel/UCFChd_w024Jyn97hdjaB8kQ/ */}
           </TouchableRipple>
           <Divider style={{elevation: 3}} />
-          <TouchableRipple onPress={() => console.log('Pressed')}>
+          <TouchableRipple
+            onPress={() =>
+              Linking.openURL('https://www.linkedin.com/company/hira-walraven/')
+            }>
             <List.Item
               titleStyle={{fontSize: 18, color: grey}}
               title="LinkedIn"

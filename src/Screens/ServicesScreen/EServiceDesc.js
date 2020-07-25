@@ -28,7 +28,15 @@ export default function EServiceDesc({navigation, route}) {
         <Appbar.Action icon="magnify" color="#4e4e4f" />
       </Appbar.Header>
       <ScrollView style={{backgroundColor: 'white'}}>
-        <Image source={img} style={{width: '100%'}} />
+        <Image
+          source={{uri: img}}
+          style={{
+            width: '100%',
+            height: '60%',
+            flex: 0,
+            // margin: 10, //16
+          }}
+        />
 
         <View style={{margin: 15}}>
           <Text

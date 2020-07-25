@@ -50,7 +50,10 @@ export default function ProductsListItems({route, navigation}) {
                 alignItems: 'center',
                 padding: 10,
               }}>
-              <ListComponent name={item.name} img={item.iconImage} />
+              <ListComponent
+                name={item.name}
+                img={item.product_images[0].image}
+              />
             </TouchableRipple>
             <Divider style={{elevation: 3}} />
           </View>

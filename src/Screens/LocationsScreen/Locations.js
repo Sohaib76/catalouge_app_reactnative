@@ -13,23 +13,52 @@ import {Marker} from 'react-native-maps';
 export default function Locations({navigation}) {
   const [lat, setlat] = useState(24.924415);
   const [long, setlong] = useState(55.057513);
-  // const _navMenu = () => navigation.toggleDrawer();
+  const _navMenu = () => navigation.toggleDrawer();
 
   const [selectedValue, setSelectedValue] = useState('Search');
   const [searchQuery, setSearchQuery] = useState('');
   //https://github.com/itzpradip/Food-Finder-React-Native-App/blob/master/screens/MapTestScreen.js
   const onChangeSearch = (query) => setSearchQuery(query);
 
-  const dropDownClicked = (itemValue) => {
+  const dropDownClicked = (itemValue, itemIndex) => {
     setSelectedValue(itemValue);
-    setlat(24.924415);
-    setlong(55.06);
+    if (itemValue == 'Global Corporate Offices') {
+      setlat(19.107029);
+      setlong(72.881736);
+      // console.log(itemIndex);
+    }
+    if (itemValue == 'RAK - UAE') {
+      setlat(25.384369);
+      setlong(55.980387);
+      // console.log(lat);
+    }
+    if (itemValue == 'Abu Dhabi - UAE') {
+      setlat(24.375706);
+      setlong(54.496087);
+      // console.log(lat);
+    }
+    if (itemValue == 'Dubai - UAE') {
+      setlat(24.924429);
+      setlong(55.057431);
+      // console.log(lat);
+    }
+    if (itemValue == 'Saudi Arabia') {
+      setlat(24.710976);
+      setlong(46.693969);
+    }
+    //setlat(19.107029);
+    //setlong(72.881736);
+
+    // setlat(24.924429);
+    // setlong(55.057431);
   };
+
+  //24.375817, 54.496072
 
   return (
     <>
       <AppbarHeader
-        // _navMenu={_navMenu}
+        _navMenu={_navMenu}
         heading={selectedValue}
         iconName="map-marker"
       />
@@ -57,12 +86,26 @@ export default function Locations({navigation}) {
             }}
             mode="dropdown"
             onValueChange={(itemValue, itemIndex) =>
-              dropDownClicked(itemValue)
+              dropDownClicked(itemValue, itemIndex)
             }>
+            <Picker.Item color={grey} label="Dubai - UAE" value="Dubai - UAE" />
             <Picker.Item
               color={grey}
-              label="Global Corporate Offices"
+              label="India"
               value="Global Corporate Offices"
+            />
+
+            <Picker.Item color={grey} label="RAK - UAE" value="RAK - UAE" />
+            <Picker.Item
+              color={grey}
+              label="Abu Dhabi - UAE"
+              value="Abu Dhabi - UAE"
+            />
+
+            <Picker.Item
+              color={grey}
+              label="Saudi Arabia"
+              value="Saudi Arabia"
             />
           </Picker>
         </View>

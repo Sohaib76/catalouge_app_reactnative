@@ -57,9 +57,15 @@ export default class VideosYou extends Component {
     };
   }
   render() {
+    const _navMenu = () => this.props.navigation.toggleDrawer();
+
     return (
       <View style={{flex: 1}}>
-        <AppbarHeader iconName="play-circle" heading="Videos" />
+        <AppbarHeader
+          iconName="play-circle"
+          heading="Videos"
+          _navMenu={_navMenu}
+        />
         {this.state.theVideosList ? (
           <ScrollView style={{paddingTop: 15}}>
             {this.state.theVideosList.map((video, id) => (

@@ -70,7 +70,24 @@ export default function ProductsItemDesc({route, navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
-    setImages(item.images);
+    const theImggList = [];
+    var descriptionList = [];
+    var modifiedDescList = [];
+    item.product_images.map((imgg) => {
+      theImggList.push(imgg.image);
+    });
+    descriptionList = item.description.split('</li>');
+    descriptionList.pop();
+    console.log(descriptionList);
+    descriptionList.map((d) => {
+      modifiedDescList.push(
+        d.replace('<li>', '').replace('<ul>', '').replace('<br>', ''),
+      );
+    });
+    console.log(modifiedDescList);
+
+    setImages(theImggList);
+    setDescr(modifiedDescList);
   }, []);
 
   const viewChart = () => {
@@ -85,9 +102,13 @@ export default function ProductsItemDesc({route, navigation}) {
   };
   const download = () => {
     console.log('Download');
+    Linking.openURL(
+      'https://drive.google.com/uc?export=download&id=18IKFvBmHlqhGaRYBOJzNd_kbBdCWZtxf',
+    );
   };
 
   const [images, setImages] = useState([]);
+  const [descr, setDescr] = useState();
 
   const [starePress, setStartPress] = useState(item.isFavourite);
 
@@ -201,9 +222,10 @@ export default function ProductsItemDesc({route, navigation}) {
           Features and Benefits
         </Text>
 
-        {item.features.map((bullet_point, id) => (
-          <BulletPoints key={id} text={bullet_point} />
-        ))}
+        {descr &&
+          descr.map((bullet_point, id) => (
+            <BulletPoints key={id} text={bullet_point} />
+          ))}
 
         <View
           style={{
@@ -269,7 +291,7 @@ export default function ProductsItemDesc({route, navigation}) {
             </Text>
           </View>
 
-          {item.category.map((cat, id) => (
+          {/* {item.category.map((cat, id) => (
             <Text
               key={id}
               style={{
@@ -282,7 +304,7 @@ export default function ProductsItemDesc({route, navigation}) {
               }}>
               {cat}
             </Text>
-          ))}
+          ))} */}
         </View>
       </ScrollView>
     </>

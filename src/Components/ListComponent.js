@@ -4,8 +4,9 @@ import {Text, Image} from 'react-native';
 export default function ListComponent({name, img}) {
   return (
     <>
+      {console.log(img)}
       <Image
-        source={img}
+        source={{uri: img}}
         style={{
           width: 80,
           height: 80,
