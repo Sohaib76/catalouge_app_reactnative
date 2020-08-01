@@ -8,10 +8,25 @@ export default function CustomDrawerContent({navigation}) {
     <>
       <Drawer.Item
         style={{padding: 1}}
+        onPress={() => navigation.navigate('Home')}
+        icon={() => (
+          <IconButton
+            style={{marginLeft: 0, marginRight: -25}}
+            icon="home-variant-outline"
+            color={green}
+            size={22}
+          />
+        )}
+        label="Home"
+      />
+      <Divider />
+
+      <Drawer.Item
+        style={{padding: 1}}
         onPress={() => navigation.navigate('Products')}
         icon={() => (
           <IconButton
-            style={{marginLeft: 0, marginRight: 0}}
+            style={{marginLeft: 0, marginRight: -25}}
             icon="briefcase-variant"
             color={green}
             size={22}
@@ -25,7 +40,7 @@ export default function CustomDrawerContent({navigation}) {
         onPress={() => navigation.navigate('Downloads')}
         icon={() => (
           <IconButton
-            style={{marginLeft: 0, marginRight: 0}}
+            style={{marginLeft: 0, marginRight: -25}}
             icon="download"
             color={green}
             size={22}
@@ -39,7 +54,7 @@ export default function CustomDrawerContent({navigation}) {
         onPress={() => navigation.navigate('Videos')}
         icon={() => (
           <IconButton
-            style={{marginLeft: 0, marginRight: 0}}
+            style={{marginLeft: 0, marginRight: -25}}
             icon="play-circle"
             color={green}
             size={22}
@@ -50,16 +65,16 @@ export default function CustomDrawerContent({navigation}) {
       <Divider />
       <Drawer.Item
         style={{padding: 1}}
-        onPress={() => navigation.navigate('Contact Us')}
+        onPress={() => navigation.navigate('Locations')}
         icon={() => (
           <IconButton
-            style={{marginLeft: 0, marginRight: 0}}
-            icon="phone"
+            style={{marginLeft: 0, marginRight: -25}}
+            icon="earth"
             color={green}
             size={22}
           />
         )}
-        label="Contact Us"
+        label="Locations"
       />
       <Divider />
       <Drawer.Item
@@ -67,7 +82,7 @@ export default function CustomDrawerContent({navigation}) {
         onPress={() => navigation.navigate('Favourites')}
         icon={() => (
           <IconButton
-            style={{marginLeft: 0, marginRight: 0}}
+            style={{marginLeft: 0, marginRight: -25}}
             icon="star"
             color={green}
             size={22}
@@ -81,7 +96,7 @@ export default function CustomDrawerContent({navigation}) {
         onPress={() => navigation.navigate('Engineering Services')}
         icon={() => (
           <IconButton
-            style={{marginLeft: 0, marginRight: 0}}
+            style={{marginLeft: 0, marginRight: -25}}
             icon={require('.././Images/Others/eicon.png')}
             color={green}
             size={22}
@@ -95,7 +110,7 @@ export default function CustomDrawerContent({navigation}) {
         onPress={() => navigation.navigate('More Information')}
         icon={() => (
           <IconButton
-            style={{marginLeft: 0, marginRight: 0}}
+            style={{marginLeft: 0, marginRight: -25}}
             icon="alert-circle-outline"
             color={green}
             size={22}
@@ -130,7 +145,7 @@ export default function CustomDrawerContent({navigation}) {
             )
           }
         />
-        {/* <FAB
+        <FAB
           style={{
             backgroundColor: '#FCAF45',
           }}
@@ -149,8 +164,10 @@ export default function CustomDrawerContent({navigation}) {
               source={require('.././Images/Others/insta.png')}
             />
           )}
-          onPress={() => console.log('Pressed')}
-        /> */}
+          onPress={() =>
+            Linking.openURL('https://www.instagram.com/hirawalraven/')
+          }
+        />
 
         <FAB
           style={{backgroundColor: '#2867B2'}}

@@ -8,6 +8,8 @@ import {
   View,
 } from 'react-native';
 import {green} from '../../Components/PrimaryColors';
+import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
+import ClosableModal from 'rn-closable-modal';
 
 const InfoModal = ({modalVisible, setModalVisible, renderMessage, title}) => {
   const [name, setName] = useState('');
@@ -18,18 +20,30 @@ const InfoModal = ({modalVisible, setModalVisible, renderMessage, title}) => {
   const [message, setMessage] = useState('');
 
   return (
+    // <TouchableWithoutFeedback
+    //   style={{backgroundColor: 'red', flex: 1, width: 100, height: 100}}
+    //   onPress={() => {
+    //     // setModalVisible(false);
+    //     console.log('Pressed outside Modal');
+    //   }}>
     <View style={styles.centeredView}>
-      <Modal
+      <ClosableModal
+        // style={{backgroundColor: 'red'}}
         animationType="slide"
+        // backdropOpacity={0.3}
         transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
+        // visible={modalVisible}
+        show={modalVisible}
+        overlayColor={'rgba(0,0,0,0.8)'}
+        onClose={() => {
           setModalVisible(false);
         }}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
+            {/* <TouchableWithoutFeedback */}
+            {/* style={styles.modalView}
+          onPress={() => console.log('PPP')}> */}
             <Text style={styles.modalText}>{title}</Text>
-
             <View style={styles.inputView}>
               <Text>Name</Text>
               <TextInput
@@ -75,7 +89,6 @@ const InfoModal = ({modalVisible, setModalVisible, renderMessage, title}) => {
                 value={location}
               />
             </View>
-
             {renderMessage && (
               <View style={styles.inputView}>
                 <Text>Message</Text>
@@ -92,13 +105,21 @@ const InfoModal = ({modalVisible, setModalVisible, renderMessage, title}) => {
               style={{...styles.openButton}}
               onPress={() => {
                 setModalVisible(!modalVisible);
+                setName('');
+                setCompany('');
+                setPhone('');
+                setEmail('');
+                setLocation('');
+                setMessage('');
               }}>
               <Text style={styles.textStyle}>Submit</Text>
             </TouchableHighlight>
+            {/* </TouchableWithoutFeedback> */}
           </View>
         </View>
-      </Modal>
+      </ClosableModal>
     </View>
+    /* </TouchableWithoutFeedback> */
   );
 };
 
@@ -140,7 +161,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-    width: 250,
+    width: 290, //250
   },
 
   textStyle: {

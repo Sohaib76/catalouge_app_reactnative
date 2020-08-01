@@ -13,48 +13,48 @@ export default function EngineeringServices({navigation}) {
 
   const theImageLink = require('../../Images/Others/eservice.png');
 
-  const theServicesList = [
-    {
-      text: 'Engineering Service 1',
-      desc: theDummyText,
-      image: theImageLink,
-    },
-    {
-      text: 'Engineering Service 2',
-      desc: theDummyText,
-      image: theImageLink,
-    },
-    {
-      text: 'Engineering Service 3',
-      desc: theDummyText,
-      image: theImageLink,
-    },
-    {
-      text: 'Engineering Service 4',
-      desc: theDummyText,
-      image: theImageLink,
-    },
-    {
-      text: 'Engineering Service 5',
-      desc: theDummyText,
-      image: theImageLink,
-    },
-    {
-      text: 'Engineering Service 6',
-      desc: theDummyText,
-      image: theImageLink,
-    },
-    {
-      text: 'Engineering Service 7',
-      desc: theDummyText,
-      image: theImageLink,
-    },
-    {
-      text: 'Engineering Service 8',
-      desc: theDummyText,
-      image: theImageLink,
-    },
-  ];
+  // const theServicesList = [
+  //   {
+  //     text: 'Engineering Service 1',
+  //     desc: theDummyText,
+  //     image: theImageLink,
+  //   },
+  //   {
+  //     text: 'Engineering Service 2',
+  //     desc: theDummyText,
+  //     image: theImageLink,
+  //   },
+  //   {
+  //     text: 'Engineering Service 3',
+  //     desc: theDummyText,
+  //     image: theImageLink,
+  //   },
+  //   {
+  //     text: 'Engineering Service 4',
+  //     desc: theDummyText,
+  //     image: theImageLink,
+  //   },
+  //   {
+  //     text: 'Engineering Service 5',
+  //     desc: theDummyText,
+  //     image: theImageLink,
+  //   },
+  //   {
+  //     text: 'Engineering Service 6',
+  //     desc: theDummyText,
+  //     image: theImageLink,
+  //   },
+  //   {
+  //     text: 'Engineering Service 7',
+  //     desc: theDummyText,
+  //     image: theImageLink,
+  //   },
+  //   {
+  //     text: 'Engineering Service 8',
+  //     desc: theDummyText,
+  //     image: theImageLink,
+  //   },
+  // ];
 
   useEffect(() => {
     fetch('https://roundcomm.com/demos/hirawalraven/api/engineering-service/')

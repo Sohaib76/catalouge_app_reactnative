@@ -4,7 +4,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import VideoDetails from '../../Components/VideoDetails';
 import AppbarHeader from '../../Components/AppbarHeader';
 
-const CHANNEL_ID = 'UCFChd_w024Jyn97hdjaB8kQ';
+const CHANNEL_ID = 'UCqH-4meI8X2giZMHO-Y1idQ';
 const API_KEY = 'AIzaSyA_Zym0Y8pogUylmaxgo7a_3NvUj7UVrqQ';
 
 export default class VideosYou extends Component {

@@ -8,58 +8,58 @@ import RNFetchBlob from 'rn-fetch-blob';
 export default function Downloads({navigation}) {
   const _navMenu = () => navigation.toggleDrawer();
   //https://www.gdirect.link/
-  const theDownloadsLst = [
-    {
-      text: 'Document 1',
-      url:
-        'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
-    },
-    {
-      text: 'Document 2',
-      url:
-        'https://drive.google.com/uc?export=download&id=18IKFvBmHlqhGaRYBOJzNd_kbBdCWZtxf',
-    },
-    {
-      text: 'Document 3',
-      url:
-        'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
-    },
-    {
-      text: 'Document 4',
-      url:
-        'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
-    },
-    {
-      text: 'Document 5',
-      url:
-        'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
-    },
-    {
-      text: 'Document 1',
-      url:
-        'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
-    },
-    {
-      text: 'Document 2',
-      url:
-        'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
-    },
-    {
-      text: 'Document 3',
-      url:
-        'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
-    },
-    {
-      text: 'Document 4',
-      url:
-        'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
-    },
-    {
-      text: 'Document 5',
-      url:
-        'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
-    },
-  ];
+  // const theDownloadsLst = [
+  //   {
+  //     text: 'Document 1',
+  //     url:
+  //       'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
+  //   },
+  //   {
+  //     text: 'Document 2',
+  //     url:
+  //       'https://drive.google.com/uc?export=download&id=18IKFvBmHlqhGaRYBOJzNd_kbBdCWZtxf',
+  //   },
+  //   {
+  //     text: 'Document 3',
+  //     url:
+  //       'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
+  //   },
+  //   {
+  //     text: 'Document 4',
+  //     url:
+  //       'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
+  //   },
+  //   {
+  //     text: 'Document 5',
+  //     url:
+  //       'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
+  //   },
+  //   {
+  //     text: 'Document 1',
+  //     url:
+  //       'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
+  //   },
+  //   {
+  //     text: 'Document 2',
+  //     url:
+  //       'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
+  //   },
+  //   {
+  //     text: 'Document 3',
+  //     url:
+  //       'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
+  //   },
+  //   {
+  //     text: 'Document 4',
+  //     url:
+  //       'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
+  //   },
+  //   {
+  //     text: 'Document 5',
+  //     url:
+  //       'https://drive.google.com/uc?export=download&id=1InX7Lpl6zZuwyXKQ3VunzdVxxmkDEvJn',
+  //   },
+  // ];
 
   useEffect(() => {
     fetch('https://roundcomm.com/demos/hirawalraven/api/download/')

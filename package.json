@@ -27,6 +27,7 @@
     "react-native-thumbnail-video": "^0.1.2",
     "react-native-vector-icons": "^7.0.0",
     "react-native-youtube": "^2.0.1",
+    "rn-closable-modal": "^1.1.0",
     "rn-fetch-blob": "^0.12.0"
   },
   "devDependencies": {
