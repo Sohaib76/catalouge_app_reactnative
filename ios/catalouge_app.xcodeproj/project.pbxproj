@@ -41,6 +41,10 @@
 		ADFF55D3F11443F18A08904C /* Rotis Sans Serif 55.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 931BE1342C694273B8803DC3 /* Rotis Sans Serif 55.ttf */; };
 		8B62F0412CB44462824FF562 /* Rotis-SansSerif-Std_38713.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50DD32CEC2EB426B85451D22 /* Rotis-SansSerif-Std_38713.ttf */; };
 		9D4FAA4BD20A405DB7491868 /* AgfaRotisSansSerifExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 506088F6D6714BE38A916E2B /* AgfaRotisSansSerifExtraBold.ttf */; };
+		2ADE7A9CE0774FAE8A0ACEB2 /* SegoeUI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E44F7C063B52431F96C0AB00 /* SegoeUI.ttf */; };
+		7B81E51AD08C4A78924CF8D2 /* SegoeUIBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E34B34F2668D4F75A4E19413 /* SegoeUIBold.ttf */; };
+		831000D947124693911EAECE /* SegoeUIBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BEA1A0C9BBE401D8F6FFCE4 /* SegoeUIBoldItalic.ttf */; };
+		5C5E117B47674E3E8FF0551E /* SegoeUIItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A57C31175ABE4BE68C30037B /* SegoeUIItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +105,10 @@
 		931BE1342C694273B8803DC3 /* Rotis Sans Serif 55.ttf */ = {isa = PBXFileReference; name = "Rotis Sans Serif 55.ttf"; path = "../src/assets/fonts/Rotis Sans Serif 55.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		50DD32CEC2EB426B85451D22 /* Rotis-SansSerif-Std_38713.ttf */ = {isa = PBXFileReference; name = "Rotis-SansSerif-Std_38713.ttf"; path = "../src/assets/fonts/Rotis-SansSerif-Std_38713.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		506088F6D6714BE38A916E2B /* AgfaRotisSansSerifExtraBold.ttf */ = {isa = PBXFileReference; name = "AgfaRotisSansSerifExtraBold.ttf"; path = "../src/assets/fonts/AgfaRotisSansSerifExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E44F7C063B52431F96C0AB00 /* SegoeUI.ttf */ = {isa = PBXFileReference; name = "SegoeUI.ttf"; path = "../src/assets/fonts/SegoeUI.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E34B34F2668D4F75A4E19413 /* SegoeUIBold.ttf */ = {isa = PBXFileReference; name = "SegoeUIBold.ttf"; path = "../src/assets/fonts/SegoeUIBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4BEA1A0C9BBE401D8F6FFCE4 /* SegoeUIBoldItalic.ttf */ = {isa = PBXFileReference; name = "SegoeUIBoldItalic.ttf"; path = "../src/assets/fonts/SegoeUIBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A57C31175ABE4BE68C30037B /* SegoeUIItalic.ttf */ = {isa = PBXFileReference; name = "SegoeUIItalic.ttf"; path = "../src/assets/fonts/SegoeUIItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +244,10 @@
 				931BE1342C694273B8803DC3 /* Rotis Sans Serif 55.ttf */,
 				50DD32CEC2EB426B85451D22 /* Rotis-SansSerif-Std_38713.ttf */,
 				506088F6D6714BE38A916E2B /* AgfaRotisSansSerifExtraBold.ttf */,
+				E44F7C063B52431F96C0AB00 /* SegoeUI.ttf */,
+				E34B34F2668D4F75A4E19413 /* SegoeUIBold.ttf */,
+				4BEA1A0C9BBE401D8F6FFCE4 /* SegoeUIBoldItalic.ttf */,
+				A57C31175ABE4BE68C30037B /* SegoeUIItalic.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -404,6 +416,10 @@
 				ADFF55D3F11443F18A08904C /* Rotis Sans Serif 55.ttf in Resources */,
 				8B62F0412CB44462824FF562 /* Rotis-SansSerif-Std_38713.ttf in Resources */,
 				9D4FAA4BD20A405DB7491868 /* AgfaRotisSansSerifExtraBold.ttf in Resources */,
+				2ADE7A9CE0774FAE8A0ACEB2 /* SegoeUI.ttf in Resources */,
+				7B81E51AD08C4A78924CF8D2 /* SegoeUIBold.ttf in Resources */,
+				831000D947124693911EAECE /* SegoeUIBoldItalic.ttf in Resources */,
+				5C5E117B47674E3E8FF0551E /* SegoeUIItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

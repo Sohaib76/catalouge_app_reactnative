@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import {
   TouchableOpacity,
   TouchableHighlight,
@@ -7,91 +7,77 @@ import {
 import {TouchableRipple} from 'react-native-paper';
 import {green} from './PrimaryColors';
 
-export default function HomeCard({navigation, img, text, navigateTo}) {
-  const [pressStatus, setpressStatus] = useState(false);
+export default function HomeCard({
+  navigation,
+  img,
+  text,
+  txtColor,
+  bgColor,
+  navigateTo,
+}) {
+  const [bg, setbg] = useState(bgColor);
+  const [textColor, settextColor] = useState(txtColor);
 
-  _onHideUnderlay = () => {
-    setpressStatus(false);
-  };
-
-  _onShowUnderlay = () => {
-    setpressStatus(true);
+  navigator = () => {
+    setbg(green);
+    settextColor('white');
+    navigation.navigate(navigateTo);
   };
 
   return (
-    <View style={pressStatus ? styles.containerPress : styles.container}>
+    // <View
+    //   style={{
+    //     backgroundColor: bgColor,
+    //     flex: 1,
+    //     margin: 10,
+    //     borderRadius: 15,
+    //     borderColor: '#005D40',
+    //     borderWidth: 4,
+    //     alignItems: 'center',
+    //     justifyContent: 'center',
+
+    //   }}>
+    <TouchableRipple
+      style={{
+        backgroundColor: bgColor,
+        flex: 1,
+        margin: 10,
+        borderRadius: 15,
+        borderColor: '#005D40',
+        borderWidth: 4,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+      // activeOpacity={1}
+      // rippleColor="rgba(0, 50, 0, 1)"
+      // underlayColor="white"
+      onPress={navigator}>
       <View
         style={{
-          width: '100%',
-          height: '100%',
+          // backgroundColor: bgColor,
+          // flex: 1,
+          // margin: 10,
+          // borderRadius: 15,
+          // borderColor: '#005D40',
+          // borderWidth: 4,
+          alignItems: 'center',
+          justifyContent: 'center',
         }}>
-        <TouchableHighlight
-          style={{height: '100%'}}
-          activeOpacity={1}
-          onShowUnderlay={_onShowUnderlay}
-          onHideUnderlay={_onHideUnderlay}
-          underlayColor={green}
-          onPress={() => navigation.navigate(navigateTo)}>
-          <>
-            <View
-              style={{
-                flex: 5,
-                justifyContent: 'center',
-
-                alignItems: 'center',
-              }}>
-              <Image
-                style={{
-                  tintColor: pressStatus ? 'yellow' : green,
-                }}
-                source={img}
-              />
-            </View>
-            <View>
-              <Text style={pressStatus ? styles.textPress : styles.text}>
-                {text}
-              </Text>
-            </View>
-          </>
-        </TouchableHighlight>
+        <View style={{flex: 5, justifyContent: 'center'}}>
+          <Image source={img} />
+        </View>
+        <Text
+          style={{
+            fontSize: 15,
+            flex: 0,
+            fontWeight: 'bold',
+            color: txtColor,
+            marginBottom: 15,
+            textAlign: 'center',
+          }}>
+          {text}
+        </Text>
       </View>
-    </View>
+    </TouchableRipple>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-    flex: 1,
-    margin: 10,
-    borderRadius: 15,
-    borderColor: '#005D40',
-    borderWidth: 2.5,
-    alignItems: 'center',
-  },
-  containerPress: {
-    backgroundColor: 'white',
-    flex: 1,
-    margin: 10,
-    borderRadius: 15,
-    borderColor: '#005D40',
-    borderWidth: 4,
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 15,
-    flex: 0,
-    fontWeight: 'bold',
-    color: green,
-    marginBottom: 15,
-    textAlign: 'center',
-  },
-  textPress: {
-    fontSize: 15,
-    flex: 0,
-    fontWeight: 'bold',
-    color: 'white',
-    marginBottom: 15,
-    textAlign: 'center',
-  },
-});

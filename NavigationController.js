@@ -1,6 +1,9 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {
+  createStackNavigator,
+  CardStyleInterpolators,
+} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import HomeScreen from './src/Screens/HomeScreen/HomeScreen';
@@ -27,17 +30,17 @@ const Stack = createStackNavigator();
 
 const Drawwer = createDrawerNavigator();
 
-const config = {
-  animation: 'spring',
-  config: {
-    stiffness: 1000,
-    damping: 500,
-    mass: 3,
-    overshootClamping: true,
-    restDisplacementThreshold: 0.01,
-    restSpeedThreshold: 0.01,
-  },
-};
+// const config = {
+//   animation: 'spring',
+//   config: {
+//     stiffness: 1000,
+//     damping: 50,
+//     mass: 4,
+//     overshootClamping: true,
+//     restDisplacementThreshold: 0.01,
+//     restSpeedThreshold: 0.01,
+//   },
+// };
 
 function DownloadsStackNavigator() {
   return (
@@ -66,12 +69,16 @@ function ProductsStackNavigator() {
   return (
     <Stack.Navigator
       screenOptions={{
-        transitionSpec: {
-          open: config,
-          close: config,
-        },
+        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+
+        // transitionSpec: {
+        //   open: config,
+        //   close: config,
+        // },
+
         headerShown: false,
         gestureEnabled: true,
+        gestureDirection: 'horizontal',
       }}>
       <Stack.Screen name="Products" component={Products} />
       <Stack.Screen name="ProductsListItems" component={ProductsListItems} />
@@ -94,6 +101,7 @@ function FavouritesStackNavigator() {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}>
       <Stack.Screen name="Favourites" component={Favourites} />
       <Stack.Screen name="ProductsListItems" component={ProductsListItems} />
@@ -107,6 +115,7 @@ function EngineeringServicesStackNavigator() {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}>
       <Stack.Screen
         name="EngineeringServices"

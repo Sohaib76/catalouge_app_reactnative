@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {View, Image, Text} from 'react-native';
+import {View, Image, Text, ActivityIndicator} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {Appbar} from 'react-native-paper';
 import EServiceList from '../../Components/EServiceList';
 import {grey, green} from '../../Components/PrimaryColors';
+import {Icon} from 'react-native-elements';
 
 export default function EngineeringServices({navigation}) {
   const _navMenu = () => navigation.toggleDrawer();
@@ -71,8 +72,15 @@ export default function EngineeringServices({navigation}) {
     <ScrollView>
       <View style={{height: 2, backgroundColor: 'red', width: '100%'}} />
 
-      <Appbar.Header style={{backgroundColor: 'white'}}>
-        <Appbar.Action icon="menu" color="#005D40" onPress={_navMenu} />
+      <Appbar.Header style={{backgroundColor: 'white', paddingLeft: 10}}>
+        {/* <Appbar.Action icon="menu" color="#005D40" onPress={_navMenu} /> */}
+        <Icon
+          name="menu"
+          type="entypo"
+          color={green}
+          size={40}
+          onPress={_navMenu}
+        />
         <Appbar.Action
           style={{marginRight: 0}}
           icon={() => (
@@ -89,7 +97,12 @@ export default function EngineeringServices({navigation}) {
             fontWeight: 'bold',
           }}
         />
-        <Appbar.Action icon="magnify" color="#005D40" onPress={_navMenu} />
+        <Appbar.Action
+          icon="magnify"
+          color="#005D40"
+          onPress={_navMenu}
+          size={30}
+        />
       </Appbar.Header>
       {engineeringServiceList ? (
         engineeringServiceList.map((service, id) => (
@@ -105,7 +118,9 @@ export default function EngineeringServices({navigation}) {
           />
         ))
       ) : (
-        <Text>Loading</Text>
+        <View style={{flex: 1, justifyContent: 'center'}}>
+          <ActivityIndicator size="large" color={green} />
+        </View>
       )}
     </ScrollView>
   );

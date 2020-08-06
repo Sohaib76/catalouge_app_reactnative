@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, Linking} from 'react-native';
 // import MapView from 'react-native-maps';
 import {Picker} from '@react-native-community/picker';
 import {Searchbar} from 'react-native-paper';
 import {grey, green} from '../../Components/PrimaryColors';
 import AppbarHeader from '../../Components/AppbarHeader';
-import {ScrollView} from 'react-native-gesture-handler';
+import {
+  ScrollView,
+  TouchableWithoutFeedback,
+} from 'react-native-gesture-handler';
 
 import MapView, {PROVIDER_GOOGLE, Callout} from 'react-native-maps';
 import {Marker} from 'react-native-maps';
@@ -117,12 +120,16 @@ export default function Locations({navigation}) {
             borderRadius: 10,
             backgroundColor: 'white',
           }}>
-          <Searchbar
-            style={{padding: 5}}
-            placeholder="Search"
-            onChangeText={onChangeSearch}
-            value={searchQuery}
-          />
+          <TouchableWithoutFeedback
+            style={{ width: '100%'}}
+            onPress={() => Linking.openURL('https://maps.google.com')}>
+            <Searchbar
+              style={{padding: 5}}
+              placeholder="Search"
+              onChangeText={onChangeSearch}
+              value={searchQuery}
+            />
+          </TouchableWithoutFeedback>
         </View>
 
         {/* <View
@@ -132,7 +139,7 @@ export default function Locations({navigation}) {
             justifyContent: 'center',
             alignItems: 'center',
           }}> */}
-        <View style={{flex: 1, backgroundColor: 'red', height: 380}}>
+        <View style={{flex: 1,height: 380}}>
           <MapView
             provider={PROVIDER_GOOGLE} // remove if not using Google Maps
             style={styles.map}

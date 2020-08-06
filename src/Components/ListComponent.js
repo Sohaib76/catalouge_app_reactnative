@@ -19,7 +19,8 @@ export default function ListComponent({name, img}) {
           flex: 1,
           fontSize: 15,
           color: '#4e4e4f',
-          fontFamily: 'Rotis Sans Serif 55',
+
+          // fontFamily: 'Rotis Sans Serif 55',
           marginRight: 10,
         }}>
         {name}

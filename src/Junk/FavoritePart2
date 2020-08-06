@@ -1,0 +1,290 @@
+import React, {useState, useEffect} from 'react';
+import {ScrollView} from 'react-native-gesture-handler';
+import ProductsList from '../../Components/ProductsList';
+import AppbarHeader from '../../Components/AppbarHeader';
+import {Text} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
+
+export default function Favourites({navigation}) {
+  // const fav = route.params.fav;
+
+  const _navMenu = () => navigation.toggleDrawer();
+
+  // const imageLink = require('../../Images/productsImages/drawable-xxxhdpi/BIS-Clamps-Lined-Split-Clamp.png');
+
+  // const imageLink1 = require('../../Images/productsImages/clampother.png');
+  // const imageLink2 = require('../../Images/productsImages/BIS-Clamps-Lined-Split-Clamp.png');
+  // const imageLink3 = require('../../Images/productsImages/clamp.png');
+
+  productss = [
+    {
+      id: 1,
+      category_id: 1,
+      name: 'BIS Clamps Lined Split Clamp',
+      description:
+        '<ul><li>Lock bolts with combi cross recessed head</li><li>For horizontal and vertical applications</li><li>Profiled for extra strength<br></li></ul>',
+      brochure_file:
+        'https://roundcomm.com/demos/hirawalraven/uploads/product_brochures/1595689398-app-updated.pdf',
+      chart: 'https://roundcomm.com/demos/hirawalraven/uploads/product_charts',
+      created_at: '25-07-2020 15:03:20',
+      updated_at: '25-07-2020 15:03:20',
+      product_images: [
+        {
+          id: 1,
+          product_id: 1,
+          image:
+            'https://roundcomm.com/demos/hirawalraven/uploads/product_images/1595689400-bis-clamps-lined-split-clamp.png',
+          created_at: '25-07-2020 15:03:20',
+          updated_at: '25-07-2020 15:03:20',
+        },
+        {
+          id: 2,
+          product_id: 1,
+          image:
+            'https://roundcomm.com/demos/hirawalraven/uploads/product_images/1595689400-clamp.png',
+          created_at: '25-07-2020 15:03:20',
+          updated_at: '25-07-2020 15:03:20',
+        },
+        {
+          id: 3,
+          product_id: 1,
+          image:
+            'https://roundcomm.com/demos/hirawalraven/uploads/product_images/1595689400-clampother.png',
+          created_at: '25-07-2020 15:03:20',
+          updated_at: '25-07-2020 15:03:20',
+        },
+      ],
+    },
+  ];
+
+  data = [
+    {
+      id: 1,
+      name: 'BIS Metal Pipe Clamps',
+      description: '<p>Test</p>',
+      image:
+        'https://roundcomm.com/demos/hirawalraven/uploads/categories/1595689155-bis-metal-pipe-clamps.png',
+      created_at: '25-07-2020 14:56:33',
+      updated_at: '29-07-2020 13:26:17',
+      products: [],
+    },
+  ];
+
+  //REPLACE WHOLE PRODUCTS LIST INSTEAD PLACE RECEIVED ASYNC LIST
+  //OR CREATE SAME DATASTRUCTURE AS IT WANTS TO RECEIVE
+
+  // theObjectOfItems = {
+  //   name: 'BIS Clamps Lined Split Clamp',
+  //   features: [
+  //     'Lock bolts with combi cross recessed head',
+  //     'For horizontal and vertical applications',
+  //     'Profiled for extra strength',
+  //     'Screws secured with anti-loss washer',
+  //     'Material: steel',
+  //     'Electrogalvanized as per ASTM B 633',
+  //     'Standards (SC3), BS 1706 FE/ZN 12',
+  //     'Temperature resistance from -20 °C to +110 °C',
+  //     'Noise insulating lining, EPDM, black',
+  //     'Noise reduction up to 18dB (A).',
+  //   ],
+  //   iconImage: imageLink,
+  //   images: [imageLink1, imageLink2, imageLink3],
+  //   category: [
+  //     'Hot Dip Galvanized and Stainless Steel Option available on request',
+  //     'With connection nut M8/M10, M10/M12 available on request.',
+  //     'With M6 Side Nuts available on request.',
+  //     'This series replaces part number DMC115 series.',
+  //   ],
+  //   isFavourite: false,
+  // };
+
+  // const theproductsItems = [
+  //   theObjectOfItems,
+
+  //   {
+  //     name: 'BUS Clamps Lined Split Clamp',
+  //     features: [
+  //       'Awk bolts with combi cross recessed head',
+  //       'For horizontal and vertical applications',
+  //       'Profiled for extra strength',
+  //       'Screws secured with anti-loss washer',
+  //       'Material: steel',
+  //       'Electrogalvanized as per ASTM B 633',
+  //       'Standards (SC3), BS 1706 FE/ZN 12',
+  //       'Temperature resistance from -20 °C to +110 °C',
+  //       'Noise insulating lining, EPDM, black',
+  //       'Noise reduction up to 18dB (A).',
+  //     ],
+  //     iconImage: imageLink,
+  //     images: [imageLink1, imageLink2, imageLink3],
+  //     category: [
+  //       'Not Dip Galvanized and Stainless Steel Option available on request',
+  //       'With connection nut M8/M10, M10/M12 available on request.',
+  //       'With M6 Side Nuts available on request.',
+  //       'This series replaces part number DMC115 series.',
+  //     ],
+  //     isFavourite: false,
+  //   },
+  //   theObjectOfItems,
+  //   theObjectOfItems,
+  //   theObjectOfItems,
+  //   theObjectOfItems,
+  //   theObjectOfItems,
+  //   theObjectOfItems,
+  //   theObjectOfItems,
+
+  //   // const theproductsItemstwo
+  // ];
+
+  // const productsList = [
+  //   {
+  //     name: 'BIS Metal Pipe Clamps with Lining',
+  //     image: imageLink,
+  //     items: theproductsItems,
+  //   },
+  //   {
+  //     name: 'BIS Metal Pipe Clamps',
+  //     image: imageLink,
+  //     items: theproductsItems,
+  //   },
+  //   {
+  //     name: 'BIS Clamps For Insulated Pipe',
+  //     image: imageLink,
+  //     items: theproductsItems,
+  //   },
+  //   {
+  //     name: 'BIS Fixing Points and Sliding Devices',
+  //     image: imageLink,
+  //     items: theproductsItems,
+  //   },
+  //   {
+  //     name: 'BIS RapidStrut® Fixing System',
+  //     image: imageLink,
+  //     items: theproductsItems,
+  //   },
+  //   {
+  //     name: 'BIS Rooftop and Solar Fixing System',
+  //     image: imageLink,
+  //     items: theproductsItems,
+  //   },
+  //   {
+  //     name: 'BIS Fixing Accessories',
+  //     image: imageLink,
+  //     items: theproductsItems,
+  //   },
+  //   {
+  //     name: 'BIS Fastenings',
+  //     image: imageLink,
+  //     items: theproductsItems,
+  //   },
+  //   {
+  //     name: 'BIS Pipe Conectors',
+  //     image: imageLink,
+  //     items: theproductsItems,
+  //   },
+  // ];
+  console.log('Products Render');
+  const [products, setProducts] = useState();
+
+  let values;
+  const getMultiple = async () => {
+    try {
+      values = await AsyncStorage.multiGet([
+        'BIS Clamps Lined Split Clamp',
+        'Lined U Bolt',
+      ]);
+    } catch (e) {
+      console.log(e);
+      // read error
+    }
+
+    // console.log(values[0][1][1]);
+    // console.log('id', products.id);
+
+    // values.map((value) => {
+    //   console.log(value);
+
+    // {
+    //   value[1].category_id == products.id && console.log('gotcha');
+    // }
+    // });
+
+    //Expected Output
+    // {
+    //   parentName : [
+    //     {
+
+    //     },
+    //     {
+
+    //     }
+    //   ]
+    // }
+
+    // example console.log output:
+    // [ ['@MyApp_user', 'myUserValue'], ['@MyApp_key', 'myKeyValue'] ]
+  };
+
+  useEffect(() => {
+    var values;
+    const getMultiple = async () => {
+      try {
+        values = await AsyncStorage.multiGet([
+          'BIS Clamps Lined Split Clamp',
+          'Lined U Bolt',
+        ]);
+      } catch (e) {
+        console.log(e);
+        // read error
+      }
+    };
+    getMultiple();
+    console.log('get multiple done');
+    console.log(values);
+    fetch('https://roundcomm.com/demos/hirawalraven/api/category/')
+      .then((response) => response.json())
+      .then((res) => {
+        //console.log(res.data);
+        res.data.map((prod) => {
+          values.map((value) => {
+            value.category_id == prod.id && console.log('GotiT', value);
+          });
+          prod.products = [];
+        });
+        console.log(res.data);
+        setProducts(res.data);
+      });
+  }, []);
+
+  // useEffect(() => {
+  //   getMultiple();
+  //   // setProducts(data);
+  // }, []);
+
+  return (
+    <>
+      <AppbarHeader
+        iconName={'star'}
+        heading={'Favourites'}
+        _navMenu={_navMenu}
+      />
+
+      {products ? (
+        <ScrollView style={{backgroundColor: 'white'}}>
+          {products.map((product, id) => (
+            <ProductsList
+              key={product.id}
+              name={product.name}
+              img={product.image}
+              items={product.products}
+              navigation={navigation}
+              //  click={product.click}
+            />
+          ))}
+        </ScrollView>
+      ) : (
+        <Text>Loading</Text>
+      )}
+    </>
+  );
+}

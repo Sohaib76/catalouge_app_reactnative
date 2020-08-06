@@ -92,7 +92,7 @@ export default function More({navigation}) {
           <TouchableRipple
             onPress={() =>
               Linking.openURL(
-                'https://www.youtube.com/channel/UCFChd_w024Jyn97hdjaB8kQ/',
+                'https://www.youtube.com/channel/UCqH-4meI8X2giZMHO-Y1idQ',
               )
             }>
             <List.Item
@@ -108,7 +108,7 @@ export default function More({navigation}) {
 
           <TouchableRipple
             onPress={() =>
-              Linking.openURL('https://www.linkedin.com/company/hira-walraven/')
+              Linking.openURL('https://ae.linkedin.com/in/diamondwalraven')
             }>
             <List.Item
               titleStyle={{fontSize: 18, color: grey}}

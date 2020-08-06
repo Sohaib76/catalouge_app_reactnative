@@ -4,7 +4,9 @@ import styles from './styles';
 import {Appbar} from 'react-native-paper';
 import HomeCard from '../../Components/HomeCard';
 import Splash from '../SplashScreen/SplashScreen';
-import {Icon} from 'react-native-vector-icons/icon';
+// import {Icon} from 'react-native-vector-icons/icon';
+import {Icon} from 'react-native-elements';
+import {green} from '../../Components/PrimaryColors';
 
 export default function HomeScreen({navigation}) {
   const _navMenu = () => navigation.toggleDrawer();
@@ -26,21 +28,33 @@ export default function HomeScreen({navigation}) {
           backgroundColor: '#005D40',
           display: 'flex',
           justifyContent: 'space-between',
+          paddingLeft: 10,
         }}>
-        <Appbar.Action icon="menu" color="#fff" size={40} onPress={_navMenu} />
-        {/* <Icon name="rocket" size={30} color="#900" /> */}
+        {/* <Appbar.Action icon="menu" color="#fff" size={40} onPress={_navMenu} /> */}
+        <Icon
+          name="menu"
+          type="entypo"
+          color="#fff"
+          size={40}
+          onPress={_navMenu}
+        />
         <View>
           <Image
-            source={require('../../Images/homeImages/logoname.png')}
+            source={require('../../Images/Icons/diamondwalraven/drawable-xxhdpi/Logo.png')}
             style={{
-              width: 60,
-              height: 20,
+              width: 80,
+              height: 30,
               resizeMode: 'stretch',
             }}
           />
         </View>
 
-        <Appbar.Action icon="magnify" color="#fff" onPress={_navMenu} />
+        <Appbar.Action
+          icon="magnify"
+          color="#fff"
+          onPress={_navMenu}
+          size={30}
+        />
       </Appbar.Header>
 
       <View style={{flex: 1}}>
@@ -63,6 +77,8 @@ export default function HomeScreen({navigation}) {
               navigation={navigation}
               navigateTo="Products"
               fav={false}
+              bgColor={green}
+              txtColor="white"
             />
             <HomeCard
               img={require('../../Images/homeImages/location.png')}

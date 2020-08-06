@@ -32,7 +32,8 @@ export default function EServiceList({text, img, desc, navigation}) {
               flex: 1,
               fontSize: 19,
               color: grey,
-              fontFamily: 'AgfaRotisSansSerifExtraBold',
+              // fontFamily: 'SegoeUI',
+              // fontFamily: 'AgfaRotisSansSerifExtraBold',
               //Rotis-SansSerif-Std_38713
               //'Rotis Sans Serif 55'
               //AgfaRotisSansSerifExtraBold

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, ScrollView, Linking} from 'react-native';
+import {View, Text, ScrollView, Linking, ActivityIndicator} from 'react-native';
 import AppbarHeader from '../../Components/AppbarHeader';
 import {IconButton, Divider} from 'react-native-paper';
 import {green} from '../../Components/PrimaryColors';
@@ -117,7 +117,7 @@ export default function Downloads({navigation}) {
                     flex: 1,
                     fontSize: 20,
                     color: '#4e4e4f',
-                    fontFamily: 'AgfaRotisSansSerifExtraBold',
+                    // fontFamily: 'AgfaRotisSansSerifExtraBoldfas',
                     // fontFamily: 'Rotis-SansSerif-Std_38713',
                     padding: 20,
                   }}>
@@ -136,7 +136,9 @@ export default function Downloads({navigation}) {
           ))}
         </ScrollView>
       ) : (
-        <Text>Loading</Text>
+        <View style={{flex: 1, justifyContent: 'center'}}>
+          <ActivityIndicator size="large" color={green} />
+        </View>
       )}
     </>
   );

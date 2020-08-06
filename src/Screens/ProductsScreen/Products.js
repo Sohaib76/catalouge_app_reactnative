@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {ScrollView} from 'react-native-gesture-handler';
 import ProductsList from '../../Components/ProductsList';
 import AppbarHeader from '../../Components/AppbarHeader';
-import {Text} from 'react-native';
+import {Text, View, ActivityIndicator} from 'react-native';
+import {green} from '../../Components/PrimaryColors';
 
 export default function Products({navigation}) {
   // const fav = route.params.fav;
@@ -330,13 +331,16 @@ export default function Products({navigation}) {
               name={product.name}
               img={product.image}
               items={product.products}
+              desc={product.description}
               navigation={navigation}
               //  click={product.click}
             />
           ))}
         </ScrollView>
       ) : (
-        <Text>Loading</Text>
+        <View style={{flex: 1, justifyContent: 'center'}}>
+          <ActivityIndicator size="large" color={green} />
+        </View>
       )}
     </>
   );

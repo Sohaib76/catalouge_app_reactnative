@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
 import {Divider, TouchableRipple} from 'react-native-paper';
 import ListComponent from './ListComponent';
+import {Text} from 'react-native';
 
-export default function ProductsList({name, img, items, navigation}) {
+export default function ProductsList({name, img, items, navigation, desc}) {
   useEffect(() => {
     console.disableYellowBox = true;
   }, []);
@@ -11,7 +12,7 @@ export default function ProductsList({name, img, items, navigation}) {
     <>
       <TouchableRipple
         onPress={
-          () => navigation.navigate('ProductsListItems', {items, name}) //, navigation
+          () => navigation.navigate('ProductsListItems', {items, name, desc}) //, navigation
         }
         rippleColor="rgba(0, 0, 0, .92)"
         style={{

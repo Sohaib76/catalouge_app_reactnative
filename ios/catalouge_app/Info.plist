@@ -80,6 +80,10 @@
 		<string>Rotis Sans Serif 55.ttf</string>
 		<string>Rotis-SansSerif-Std_38713.ttf</string>
 		<string>AgfaRotisSansSerifExtraBold.ttf</string>
+		<string>SegoeUI.ttf</string>
+		<string>SegoeUIBold.ttf</string>
+		<string>SegoeUIBoldItalic.ttf</string>
+		<string>SegoeUIItalic.ttf</string>
 	</array>
 </dict>
 </plist>

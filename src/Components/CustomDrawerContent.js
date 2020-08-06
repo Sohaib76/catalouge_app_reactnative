@@ -2,10 +2,11 @@ import React from 'react';
 import {View, Text, Image, Linking} from 'react-native';
 import {Drawer, Divider, FAB, IconButton, Button} from 'react-native-paper';
 import {green} from './PrimaryColors';
+import {ScrollView} from 'react-native-gesture-handler';
 
 export default function CustomDrawerContent({navigation}) {
   return (
-    <>
+    <ScrollView>
       <Drawer.Item
         style={{padding: 1}}
         onPress={() => navigation.navigate('Home')}
@@ -119,6 +120,7 @@ export default function CustomDrawerContent({navigation}) {
         label="More Information"
       />
       <Divider />
+
       <View
         style={{
           flexDirection: 'row',
@@ -141,7 +143,7 @@ export default function CustomDrawerContent({navigation}) {
           icon="youtube"
           onPress={() =>
             Linking.openURL(
-              'https://www.youtube.com/channel/UCFChd_w024Jyn97hdjaB8kQ/',
+              'https://www.youtube.com/channel/UCqH-4meI8X2giZMHO-Y1idQ',
             )
           }
         />
@@ -174,10 +176,10 @@ export default function CustomDrawerContent({navigation}) {
           small
           icon="linkedin"
           onPress={() =>
-            Linking.openURL('https://www.linkedin.com/company/hira-walraven/')
+            Linking.openURL('https://ae.linkedin.com/in/diamondwalraven')
           }
         />
       </View>
-    </>
+    </ScrollView>
   );
 }
