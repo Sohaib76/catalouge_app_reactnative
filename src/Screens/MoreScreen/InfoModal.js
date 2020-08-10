@@ -19,6 +19,10 @@ const InfoModal = ({modalVisible, setModalVisible, renderMessage, title}) => {
   const [location, setLocation] = useState('');
   const [message, setMessage] = useState('');
 
+  const sendMessage = () => {
+    console.log('Message Sent');
+  };
+
   return (
     // <TouchableWithoutFeedback
     //   style={{backgroundColor: 'red', flex: 1, width: 100, height: 100}}
@@ -111,6 +115,7 @@ const InfoModal = ({modalVisible, setModalVisible, renderMessage, title}) => {
                 setEmail('');
                 setLocation('');
                 setMessage('');
+                sendMessage();
               }}>
               <Text style={styles.textStyle}>Submit</Text>
             </TouchableHighlight>

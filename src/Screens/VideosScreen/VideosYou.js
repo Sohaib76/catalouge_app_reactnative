@@ -66,6 +66,7 @@ export default class VideosYou extends Component {
           heading="Videos"
           _navMenu={_navMenu}
         />
+        {console.log("videolist",this.state.theVideosList)}
         {this.state.theVideosList ? (
           <ScrollView style={{paddingTop: 15}}>
             {this.state.theVideosList.map((video, id) => (
@@ -80,7 +81,7 @@ export default class VideosYou extends Component {
             ))}
           </ScrollView>
         ) : (
-          <Text style={{textAlign: 'circle', fontSize: 20}}>
+          <Text style={{textAlign: 'center', fontSize: 20}}>
             Youtube Api Quota Reached
           </Text>
         )}

@@ -5,7 +5,12 @@ import {View} from 'react-native';
 import {Icon} from 'react-native-elements';
 import {green} from './PrimaryColors';
 
-export default function AppbarHeader({_navMenu, iconName, heading}) {
+export default function AppbarHeader({
+  _navMenu,
+  iconName,
+  heading,
+  _searchBar,
+}) {
   return (
     <View>
       <View style={{height: 2, backgroundColor: 'red', width: '100%'}} />
@@ -36,7 +41,7 @@ export default function AppbarHeader({_navMenu, iconName, heading}) {
         <Appbar.Action
           icon="magnify"
           color="#005D40"
-          onPress={_navMenu}
+          onPress={_searchBar}
           size={30}
         />
       </Appbar.Header>
