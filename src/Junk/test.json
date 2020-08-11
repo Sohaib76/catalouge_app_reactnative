@@ -1,0 +1,14 @@
+{
+  "etag": "iSGaDpMxfKzkLoEhfHPabq7gGKc",
+  "items": [
+    {
+      "etag": "-W2I_xeuJEg8hIxZ-wETI_P-Uh8",
+      "id": "MAC4G4FXl5k",
+      "kind": "youtube#video",
+      "snippet": [Object],
+      "statistics": [Object]
+    }
+  ],
+  "kind": "youtube#videoListResponse",
+  "pageInfo": {"resultsPerPage": 1, "totalResults": 1}
+}

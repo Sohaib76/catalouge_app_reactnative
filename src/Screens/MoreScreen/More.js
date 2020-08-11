@@ -16,6 +16,10 @@ import {
 export default function More({navigation}) {
   const _navMenu = () => navigation.toggleDrawer();
 
+  const _searchBar = () => {
+    navigation.navigate('Products');
+  };
+
   const [modalVisible, setModalVisible] = useState(false);
   const [messageModal, setMessageModal] = useState(false);
 
@@ -31,6 +35,7 @@ export default function More({navigation}) {
         iconName="alert-circle-outline"
         heading="More information"
         _navMenu={_navMenu}
+        _searchBar={_searchBar}
       />
 
       {messageModal ? (

@@ -5,47 +5,87 @@ import VideoDetails from '../../Components/VideoDetails';
 import AppbarHeader from '../../Components/AppbarHeader';
 
 const CHANNEL_ID = 'UCqH-4meI8X2giZMHO-Y1idQ';
-const API_KEY = 'AIzaSyA_Zym0Y8pogUylmaxgo7a_3NvUj7UVrqQ';
+// const API_KEY = 'AIzaSyA_Zym0Y8pogUylmaxgo7a_3NvUj7UVrqQ'; //my old
+const API_KEY = 'AIzaSyBnAhJjSM7u3AXbYmH6xQL7UcOLpqpTYzw'; //saqib
+// const API_KEY = 'AIzaSyDKEPO4KigZO1VzoGcuICMPnMwVGlyDcyw'; //my new
 
+var tempVideosList = [];
 export default class VideosYou extends Component {
   componentDidMount() {
     this.fetchPlaylistData();
     console.disableYellowBox = true;
   }
   fetchPlaylistData = async () => {
+    console.log('Fetching');
     const response = await fetch(
       `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=30`,
     ).catch((error) => {
       console.log(error);
     });
-    const json = await response.json();
+    try {
+      const json = await response.json();
 
-    console.log('ID', json.items[0].id.videoId); //map
+      console.log('ID', json.items[0].id.videoId); //map
 
-    json.items.map(async (item) => {
-      await fetch(
-        `https://www.googleapis.com/youtube/v3/videos?id=${item.id.videoId}&key=${API_KEY}&part=snippet,id,statistics`,
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          // console.log(data.items[0].snippet.title);
+      json.items.map(async (item) => {
+        console.log(item.id.videoId);
+        await fetch(
+          `https://www.googleapis.com/youtube/v3/videos?id=${item.id.videoId}&key=${API_KEY}&part=snippet,id,statistics`,
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log(data);
 
-          agos = 2020 - data.items[0].snippet.publishedAt.substring(0, 4);
+            if (data.items.length > 0) {
+              var agos =
+                2020 - data.items[0].snippet.publishedAt.substring(0, 4);
+              tempVideosList = {
+                videoUrl: `https://www.youtube.com/watch?v=${data.items[0].id}`,
+                name: data.items[0].snippet.title,
+                tag: data.items[0].snippet.channelTitle,
+                views: data.items[0].statistics.viewCount,
+                ago: agos,
+              };
 
-          this.setState({
-            theVideoList: this.state.theVideosList.push({
-              videoUrl: `https://www.youtube.com/watch?v=${data.items[0].id}`,
-              name: data.items[0].snippet.title,
-              tag: data.items[0].snippet.channelTitle,
-              views: data.items[0].statistics.viewCount,
-              ago: agos,
-            }),
+              console.log(tempVideosList);
+              this.setState({
+                theVideosList: [
+                  ...this.state.theVideosList,
+                  {
+                    videoUrl: `https://www.youtube.com/watch?v=${data.items[0].id}`,
+                    name: data.items[0].snippet.title,
+                    tag: data.items[0].snippet.channelTitle,
+                    views: data.items[0].statistics.viewCount,
+                    ago: agos,
+                  },
+                ],
+              });
+            }
+
+            // console.log(data.items[0].snippet.title);
+            // if (data.items.length > 0) {
+            //   agos = 2020 - data.items[0].snippet.publishedAt.substring(0, 4);
+
+            //   this.setState({
+            //     theVideoList: this.state.theVideosList.push({
+            //       videoUrl: `https://www.youtube.com/watch?v=${data.items[0].id}`,
+            //       name: data.items[0].snippet.title,
+            //       tag: data.items[0].snippet.channelTitle,
+            //       views: data.items[0].statistics.viewCount,
+            //       ago: agos,
+            //     }),
+            //   });
+            // }
+          })
+          .catch((error) => {
+            console.log(error);
           });
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    });
+      });
+    } catch {
+      console.log('No Json Response');
+    }
+    // this.setState({theVideosList: tempVideosList});
+    // console.log('list In did mount', this.state.theVideosList);
   };
 
   // The Response
@@ -58,6 +98,9 @@ export default class VideosYou extends Component {
   }
   render() {
     const _navMenu = () => this.props.navigation.toggleDrawer();
+    const _searchBar = () => {
+      this.props.navigation.navigate('Products');
+    };
 
     return (
       <View style={{flex: 1}}>
@@ -65,9 +108,10 @@ export default class VideosYou extends Component {
           iconName="play-circle"
           heading="Videos"
           _navMenu={_navMenu}
+          _searchBar={_searchBar}
         />
-        {console.log("videolist",this.state.theVideosList)}
-        {this.state.theVideosList ? (
+        {console.log('videolist', this.state.theVideosList)}
+        {this.state.theVideosList.length > 0 ? (
           <ScrollView style={{paddingTop: 15}}>
             {this.state.theVideosList.map((video, id) => (
               <VideoDetails
@@ -81,9 +125,16 @@ export default class VideosYou extends Component {
             ))}
           </ScrollView>
         ) : (
-          <Text style={{textAlign: 'center', fontSize: 20}}>
-            Youtube Api Quota Reached
-          </Text>
+          <View
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '80%',
+            }}>
+            <Text style={{textAlign: 'center', fontSize: 20}}>
+              Youtube Api Quota Reached
+            </Text>
+          </View>
         )}
       </View>
     );

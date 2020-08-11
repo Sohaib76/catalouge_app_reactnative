@@ -18,6 +18,10 @@ export default function Locations({navigation}) {
   const [long, setlong] = useState(55.057513);
   const _navMenu = () => navigation.toggleDrawer();
 
+  const _searchBar = () => {
+    navigation.navigate('Products');
+  };
+
   const [selectedValue, setSelectedValue] = useState('Search');
   const [searchQuery, setSearchQuery] = useState('');
   //https://github.com/itzpradip/Food-Finder-React-Native-App/blob/master/screens/MapTestScreen.js
@@ -64,6 +68,7 @@ export default function Locations({navigation}) {
         _navMenu={_navMenu}
         heading={selectedValue}
         iconName="map-marker"
+        _searchBar={_searchBar}
       />
 
       <ScrollView>
@@ -121,7 +126,7 @@ export default function Locations({navigation}) {
             backgroundColor: 'white',
           }}>
           <TouchableWithoutFeedback
-            style={{ width: '100%'}}
+            style={{width: '100%'}}
             onPress={() => Linking.openURL('https://maps.google.com')}>
             <Searchbar
               style={{padding: 5}}
@@ -139,7 +144,7 @@ export default function Locations({navigation}) {
             justifyContent: 'center',
             alignItems: 'center',
           }}> */}
-        <View style={{flex: 1,height: 380}}>
+        <View style={{flex: 1, height: 380}}>
           <MapView
             provider={PROVIDER_GOOGLE} // remove if not using Google Maps
             style={styles.map}

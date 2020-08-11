@@ -25,18 +25,15 @@ export default function Favourites({navigation}) {
   var theListHavingObjects = [];
 
   console.log('Favourite Render');
-  // const [products, setProducts] = useState();
+
   const [favs, setFavs] = useState([]);
   const [message, setMessage] = useState(0);
   const [showBar, setShowBar] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
+  const [doneFetch, setDoneFetch] = useState(false);
+  const [noFavs, setNoFavs] = useState(false);
 
   let values;
-
-  const [, updateState] = React.useState();
-  const forceUpdate = React.useCallback(() => updateState({}), []);
-
-  const [doneFetch, setDoneFetch] = useState(false);
 
   useEffect(() => {
     setDoneFetch(false);
@@ -73,7 +70,6 @@ export default function Favourites({navigation}) {
         };
         getMultiple();
       });
-    // setDoneEffect(true)
   }, [message]);
 
   const wait = (timeout) => {
@@ -81,9 +77,6 @@ export default function Favourites({navigation}) {
       setTimeout(resolve, timeout);
     });
   };
-
-  const [noFavs, setNoFavs] = useState(false);
-  // const [DoneEffect, setDoneEffect] = useState(false);
 
   handleClick = () => {
     console.log('Message', message);
@@ -99,49 +92,6 @@ export default function Favourites({navigation}) {
     wait(2000).then(() => setRefreshing(false));
   }, []);
 
-  // function ScrollVieww() {
-  //   return (
-  //     <ScrollView
-  //       style={{backgroundColor: 'white'}}
-  //       refreshControl={
-  //         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-  //       }>
-  //       {noFavs ? (
-  //         <View
-  //           style={{
-  //             alignItems: 'center',
-  //             justifyContent: 'center',
-  //             height: '100%',
-  //             paddingTop: 200,
-  //           }}>
-  //           <Text style={{textAlign: 'center', fontSize: 20, color: grey}}>
-  //             No Favourites
-  //           </Text>
-  //         </View>
-  //       ) : (
-  //         favs.map((product, id) => (
-  //           <View key={id}>
-  //             <TouchableRipple
-  //               onPress={() => console.log('Press')}
-  //               rippleColor="rgba(0, 0, 0, .92)"
-  //               style={{
-  //                 display: 'flex',
-  //                 flexDirection: 'row',
-  //                 alignItems: 'center',
-  //                 padding: 10,
-  //               }}>
-  //               <ListComponent
-  //                 name={product.name}
-  //                 img={product.product_images[0].image}
-  //               />
-  //             </TouchableRipple>
-  //             <Divider style={{elevation: 3}} />
-  //           </View>
-  //         ))
-  //       )}
-  //     </ScrollView>
-  //   );
-  // }
   const [filtered, setFiltered] = useState([]);
   function ScrollVieww() {
     return (
@@ -200,42 +150,17 @@ export default function Favourites({navigation}) {
     );
   }
 
-  // handleSearch = (text) => {
-  //   const formattedQuery = text.toLowerCase();
-  //   const data = filter(this.state.fullData, (user) => {
-  //     return this.contains(user, formattedQuery);
-  //   });
-  //   this.setState({data, query: text});
-  // };
-
-  const [query, setQuery] = useState('');
-
-  // handleSearch = (text) => {
-  //   const formattedQuery = text.toLowerCase();
-  //   setQuery(text);
-  // };
+  // const [query, setQuery] = useState('');
 
   const [searchQuery, setSearchQuery] = React.useState('');
 
-  // const onChangeSearch = (query) => {
-  //   setSearchQuery(query);
-  //   const names = ['abc', 'jfc'];
-  //   const filtered = [];
-  //   names.filter((name) => {
-  //     if (name.includes(query)) {
-  //       filtered.push(name);
-  //     }
-  //   });
-  //   console.log('Filtered', filtered);
+  // const contains = (val, query) => {
+  //   console.log('Inside if', val);
+  // if (val.includes(query)) {
+  //   return true;
+  // }
+  // return false;
   // };
-
-  const contains = (val, query) => {
-    console.log('Inside if', val);
-    // if (val.includes(query)) {
-    //   return true;
-    // }
-    // return false;
-  };
 
   const onChangeSearch = (query) => {
     const filteredList = [];
@@ -256,40 +181,8 @@ export default function Favourites({navigation}) {
     // setFiltered(data);
   };
 
-  const handleSearch = (text) => setQuery(text);
+  // const handleSearch = (text) => setQuery(text);
 
-  function RenderHeader() {
-    return (
-      <View
-        style={{
-          backgroundColor: '#fff',
-          padding: 10,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        {/* <Searchbar
-          clearButtonMode="always"
-          autoCapitalize="none"
-          autoCorrect={false}
-          onChangeText={(text) => setQuery(text)}
-          // status="info"
-          placeholder="Search"
-          style={{
-            borderRadius: 25,
-            borderColor: '#333',
-            backgroundColor: '#fff',
-          }}
-          textStyle={{color: '#000'}}
-          value={query}
-        /> */}
-        <Searchbar
-          placeholder="Search"
-          onChangeText={onChangeSearch}
-          value={searchQuery}
-        />
-      </View>
-    );
-  }
   return (
     <>
       <AppbarHeader
