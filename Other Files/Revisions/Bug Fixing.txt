@@ -1,0 +1,153 @@
+https://hirawalraven.com/
+
+get google map, youtube api key 
+
+Splash Screen (Done)
+App bar without icon component  (Done)
+Primary Color
+Try change fonts  (Done)
+Nav bar icons (Done)
+Drawer Navigation Components (Done)
+
+
+ (Done)1- Please rename the app name to Diamond Walraven
+
+ (Done)2- In home screen, the first box is highlghted. It will only highlight when we click it.That was just to give you idea how it will look like when button is pressed.
+
+ (Done)3- The left side menu icons should be green color as in design
+
+ (Done)4- Please correct the instagram iconas in design
+
+ (Done)5- Please use the following videos from here https://www.youtube.com/results?search_query=hira+walraven+
+
+ (Done)6- On Engineering page, Please reduce the spaces between services. make more closer like in the design and darken the separator a bit
+
+ (Half)7- On Product Detail screen Star is missing (favourite icon).
+
+8- On Favourite screen pls make it exactly like products screen ..but later only those products which are starred will show here in the list ..
+
+ (Done)9- On contact form Remove Sumaiz name and clicktap digital from placeholder...Also type here should be removed when we click message box
+
+
+
+
+
+
+
+
+
+ (Half)1. Please use the same border size for boxes in home page as in design. Currently its thick.
+ (Done)2. Video section to look like design. Right now the videos are far from each other. Also font color of video title should be same as in design
+ (Done)3. Engineering service detail page, the heading and text should Exactly match with design. See the distances above and below the heading. Also the background color in design is white. And there is white wrapper in which all the content is there. Pls match font with design as well.
+ (Done)4. Engineering service title, color is wrong
+ (Done)5. Engineering service text detail color is wrong. Also font family
+ (Done)6. Download page white background boxes behind downloads. Should be same as in design
+ (Done)7. Engineering services white background boxes missing as in design
+ (Done)8 call back popup is wrongly connected with know more about us. It should open on call back. First link
+ (Done)9. Red border line is missing in top header.. as in design
+ (Done)10. Engineering service detail page. Top picture is not centred aligned
+ (Done)11. The backround or splash screen is light in design with logo standout in the middle..
+
+
+
+
+ (Done)1, Also the list of youtube videos are limited. it should show the whole list of videos to be pulled from the channel https://www.youtube.com/channel/UCFChd_w024Jyn97hdjaB8kQ
+ (Done)you just have to put this link behind Whatsapp icon
+ (Done)https://api.whatsapp.com/send?phone=971523171864&text=Hi,%20I%20want%20to%20know%20more%20about%20Hira%20Walraven%20products.
+ (Done)please put a dummy pdf behind downloads link in downloads section
+ (Done)More information should go to : https://hirawalraven.com/
+ (Done)Also Careers spellings are wrong in contact us page
+ (Done)please write Careers and link it to https://hirawalraven.com/careers/
+ (Done)1- Correct the images of the products in the product section ..right now one image is copied.
+ (Done)2- In first category (BIS Metal Pipe Clamps with Lining).. when i click another list comes up...it should be same as in pdf.. May be disable other categories click for now.. only first should be clickable
+ (Done)Google Map Api AIzaSyDNdYbnkOX0PfzA2ZF9_n_Gw2aRMgETIYE  (https://hirawalraven.com/contact-us/)
+
+
+
+In MS Word{
+More Information: Done
+Videos : Done
+Sidebar: Done
+HomePage: Done
+OverALl : Done except(Fav,Font)
+}
+{Favourites in local db} Done
+(also you need to disable landscape orientation because it is disturbing the app layout )Done
+Also category details are now going into product details api.. you may check
+API Adding{
+category text, chart, brochure
+}
+Text cut off in Engineering Service Text {Temp Done}
+Loading Indicator Change
+Font Family Problem
+Talk about ViewChart Issue
+Yellow Boxes hide
+
+
+{
+1. Favourites section not working. I pushed star icon in products, when go back to favourites , it doesnt show anything
+
+2. Send us message, where does it sends message? Also it should show some toaster, Thankyou! Message has been sent.
+
+3. Same for the call back. Also in both forms location is showing 0000... it should say, Your area
+
+4. Also search icon should open products page with a search bar just under the Products heading.
+
+As we type in, the categories will drill down. For example we type BIS C, it will show BIS Clamps Lined..
+
+Same when we go inside any category, it will drill down the products.
+
+Same for eng. services and downloads.
+
+Note: for now, on any other page search will come to products(category) page
+
+5. For some reason, videos are not showing up. It happend earlier as well but then started showing.
+
+6. When there are no favourites, it should say "No Favourites" somewhere in the middle of screen.
+
+-----------------------------------------------------
+Please make all fields cumpolsory in both forms
+-----------------------------------------------------
+Youtube Data API V3 Key
+
+AIzaSyBnAhJjSM7u3AXbYmH6xQL7UcOLpqpTYzw
+------------------------------------------------------
+it will be sent to an email.
+
+For now please set to sumaiz@clicktap.ae
+
+Dear Admin,
+
+Following message has been sent by <<Sender Name>>:
+
+Type: Callback
+Name:
+Company Name:
+Phone:
+Email:
+Location:
+
+---
+Diamond Walraven
+} Done
+
+
+
+
+
+https://techonation.com/best-ios-emulators-for-windows-run-ios-apps/  (IOS)
+-------------------------
+Search functionality with google maps {Linking > maps.google.com}
+Search Functionality in whole app
+IOS Release
+-------------------------------------
+API
+URL: https://roundcomm.com/demos/hirawalraven/login
+Email: admin@hirawalraven.com Password: @123@Hirawalraven
+https://roundcomm.com/demos/hirawalraven/api/engineering-service
+https://roundcomm.com/demos/hirawalraven/api/category
+https://roundcomm.com/demos/hirawalraven/api/download
+
+
+
+Last Milestone ask after app done, code submition with review and bid expiry change
