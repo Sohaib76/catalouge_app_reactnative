@@ -11,8 +11,15 @@ import {green} from '../../Components/PrimaryColors';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import ClosableModal from 'rn-closable-modal';
 import {sendEmail} from '../../Components/SendMail';
+import EmailSender from 'react-native-smtp';
 
-const InfoModal = ({modalVisible, setModalVisible, renderMessage, title}) => {
+const InfoModal = ({
+  modalVisible,
+  setModalVisible,
+  renderMessage,
+  title,
+  setVisible,
+}) => {
   const [name, setName] = useState('');
   const [company, setCompany] = useState('');
   const [phone, setPhone] = useState('');
@@ -64,23 +71,54 @@ const InfoModal = ({modalVisible, setModalVisible, renderMessage, title}) => {
       setModalVisible(!modalVisible);
       resetValues();
       nullValues();
-      sendEmail(
-        'sumaiz@clicktap.ae',
-        'Dear Admin,',
-        `Following message has been sent by ${name}:\n
+      // sendEmail(
+      //   'sumaiz@clicktap.ae',
+      //   'Dear Admin,',
+      //   `Following message has been sent by ${name}:\n
 
-      Type: ${renderMessage ? 'Message' : 'Callback'}\n
-      Name: ${name}\n
-      Company Name: ${company}\n
-      Phone: ${phone}\n
-      Email: ${email}\n
-      Location: ${location}\n
-        
-      ---\n\n
-      Diamond Walraven`,
-      ).then(() => {
-        console.log('Our email successful provided to device mail ');
-      });
+      // Type: ${renderMessage ? 'Message' : 'Callback'}\n
+      // Name: ${name}\n
+      // Company Name: ${company}\n
+      // Phone: ${phone}\n
+      // Email: ${email}\n
+      // Location: ${location}\n
+
+      // ---\n\n
+      // Diamond Walraven`,
+      // ).then(() => {
+      //   console.log('Our email successful provided to device mail ');
+      // });
+
+      //---------------------------------------------------------------------
+      // Configuration
+      // EmailSender.config({
+      //   host: 'smtp.hira.com',
+      //   port: '25', // Optional. Default to 465
+      //   username: 'noreply@hira.com',
+      //   password: '123456',
+      //   isAuth: 'true', // Optional. Default to `true`
+      //   tls: 'true', // Optional. Default to `true`
+      // });
+
+      // /*
+      //  * Used react-native-fs module to get file path.
+      //  * Keep this array empty if there is no attachment.
+      //  */
+      // const attachments = [];
+
+      // // Now send the mail
+      // EmailSender.send(
+      //   {
+      //     from: 'noreply@hira.com',
+      //     to: '6sohaib@gmail.com',
+      //     subject: 'Dear Admin,',
+      //     body: `<h3>Following message has been sent by ${name}:</h3><p>Type: ${
+      //       renderMessage ? 'Message' : 'Callback'
+      //     }\n Name: ${name}\n Company Name: ${company}\n Phone: ${phone}\n Email: ${email}\n Location: ${location}\n ---\n\nDiamond Walraven<p>`,
+      //   },
+      //   attachments, // This second parameter is mandatory. You can send an empty array.
+      // );
+      // setVisible(true);
       console.log('Message Sent');
     }
     // if (name === '' || company === '') {

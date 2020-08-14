@@ -6,8 +6,9 @@ import AppbarHeader from '../../Components/AppbarHeader';
 
 const CHANNEL_ID = 'UCqH-4meI8X2giZMHO-Y1idQ';
 // const API_KEY = 'AIzaSyA_Zym0Y8pogUylmaxgo7a_3NvUj7UVrqQ'; //my old
-const API_KEY = 'AIzaSyBnAhJjSM7u3AXbYmH6xQL7UcOLpqpTYzw'; //saqib
+// const API_KEY = 'AIzaSyBnAhJjSM7u3AXbYmH6xQL7UcOLpqpTYzw'; //saqib
 // const API_KEY = 'AIzaSyDKEPO4KigZO1VzoGcuICMPnMwVGlyDcyw'; //my new
+const API_KEY = 'AIzaSyAIyyiYQnlv3jBKyd7euILhg7lOSCH2T60'; //saqib new
 
 var tempVideosList = [];
 export default class VideosYou extends Component {
@@ -132,7 +133,7 @@ export default class VideosYou extends Component {
               height: '80%',
             }}>
             <Text style={{textAlign: 'center', fontSize: 20}}>
-              Youtube Api Quota Reached
+              Oops! Check back in a while
             </Text>
           </View>
         )}

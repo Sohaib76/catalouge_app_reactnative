@@ -10,6 +10,9 @@ import {green} from '../../Components/PrimaryColors';
 
 export default function HomeScreen({navigation}) {
   const _navMenu = () => navigation.toggleDrawer();
+  const _searchBar = () => {
+    navigation.navigate('Products');
+  };
 
   const [isVisible, setIsVisible] = useState(true);
 
@@ -52,7 +55,7 @@ export default function HomeScreen({navigation}) {
         <Appbar.Action
           icon="magnify"
           color="#fff"
-          onPress={_navMenu}
+          onPress={_searchBar}
           size={30}
         />
       </Appbar.Header>

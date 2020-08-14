@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {List, TouchableRipple, Divider} from 'react-native-paper';
+import {List, TouchableRipple, Divider, Snackbar} from 'react-native-paper';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import styles from './styles';
 import {green, grey} from '../../Components/PrimaryColors';
@@ -23,6 +23,11 @@ export default function More({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
   const [messageModal, setMessageModal] = useState(false);
 
+  const [visible, setVisible] = React.useState(false);
+
+  // const onToggleSnackBar = () => setVisible(!visible);
+  const onDismissSnackBar = () => setVisible(false);
+
   const showModal = (x) => {
     setMessageModal(x);
     setModalVisible(true);
@@ -44,6 +49,7 @@ export default function More({navigation}) {
           setModalVisible={setModalVisible}
           renderMessage
           title="Send Us a Message"
+          setVisible={setVisible}
         />
       ) : (
         <InfoModal
@@ -51,6 +57,7 @@ export default function More({navigation}) {
           setModalVisible={setModalVisible}
           title="Type your details here:"
           renderMessage={false}
+          setVisible={setVisible}
         />
       )}
 
@@ -176,6 +183,9 @@ export default function More({navigation}) {
           <Divider style={{elevation: 0, backgroundColor: 'black'}} />
         </List.Section>
       </ScrollView>
+      <Snackbar visible={visible} onDismiss={onDismissSnackBar}>
+        Thankyou! Message has been delivered
+      </Snackbar>
     </>
   );
 }

@@ -36,6 +36,7 @@ export default function Favourites({navigation}) {
   let values;
 
   useEffect(() => {
+    // alert('Rerenders!!!');
     setDoneFetch(false);
     fetch('https://roundcomm.com/demos/hirawalraven/api/category/')
       .then((response) => response.json())
@@ -70,7 +71,13 @@ export default function Favourites({navigation}) {
         };
         getMultiple();
       });
-  }, [message]);
+    const unsubscribe = navigation.addListener('focus', () => {
+      const massage = message + 1;
+      setMessage(massage);
+    });
+
+    return unsubscribe;
+  }, [message]); //message,navigation
 
   const wait = (timeout) => {
     return new Promise((resolve) => {
