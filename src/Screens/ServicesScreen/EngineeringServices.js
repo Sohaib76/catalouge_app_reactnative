@@ -14,53 +14,8 @@ export default function EngineeringServices({navigation}) {
     setFiltered([]);
   };
 
-  const theDummyText =
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting";
 
-  const theImageLink = require('../../Images/Others/eservice.png');
-
-  // const theServicesList = [
-  //   {
-  //     text: 'Engineering Service 1',
-  //     desc: theDummyText,
-  //     image: theImageLink,
-  //   },
-  //   {
-  //     text: 'Engineering Service 2',
-  //     desc: theDummyText,
-  //     image: theImageLink,
-  //   },
-  //   {
-  //     text: 'Engineering Service 3',
-  //     desc: theDummyText,
-  //     image: theImageLink,
-  //   },
-  //   {
-  //     text: 'Engineering Service 4',
-  //     desc: theDummyText,
-  //     image: theImageLink,
-  //   },
-  //   {
-  //     text: 'Engineering Service 5',
-  //     desc: theDummyText,
-  //     image: theImageLink,
-  //   },
-  //   {
-  //     text: 'Engineering Service 6',
-  //     desc: theDummyText,
-  //     image: theImageLink,
-  //   },
-  //   {
-  //     text: 'Engineering Service 7',
-  //     desc: theDummyText,
-  //     image: theImageLink,
-  //   },
-  //   {
-  //     text: 'Engineering Service 8',
-  //     desc: theDummyText,
-  //     image: theImageLink,
-  //   },
-  // ];
+  
 
   useEffect(() => {
     fetch('https://roundcomm.com/demos/hirawalraven/api/engineering-service/')
@@ -164,18 +119,7 @@ export default function EngineeringServices({navigation}) {
       {engineeringServiceList ? (
         <ScrollVieww />
       ) : (
-        // engineeringServiceList.map((service, id) => (
-        //   <EServiceList
-        //     navigation={navigation}
-        //     key={id}
-        //     text={service.title}
-        //     img={service.image}
-        //     desc={service.description
-        //       .replace('<p>', '')
-        //       .replace('</p>', '')
-        //       .replace('<br>', '')}
-        //   />
-        // ))
+     
         <View style={{flex: 1, justifyContent: 'center'}}>
           <ActivityIndicator size="large" color={green} />
         </View>

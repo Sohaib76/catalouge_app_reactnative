@@ -10,7 +10,7 @@ export default function Splash() {
         source={require('../../Images/Splash.png')}>
         <TouchableOpacity
           style={styles.splash__btn}
-          // onPress={() => navigate('DrawerApp')}
+      
         />
       </ImageBackground>
     </View>

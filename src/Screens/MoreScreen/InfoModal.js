@@ -8,7 +8,6 @@ import {
   View,
 } from 'react-native';
 import {green} from '../../Components/PrimaryColors';
-import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import ClosableModal from 'rn-closable-modal';
 import {sendEmail} from '../../Components/SendMail';
 import EmailSender from 'react-native-smtp';
@@ -121,19 +120,7 @@ const InfoModal = ({
       // setVisible(true);
       console.log('Message Sent');
     }
-    // if (name === '' || company === '') {
-    //   // company.trim() === '' &&
-    //   // phone.trim() === '' &&
-    //   // email.trim() == '' &&
-    //   // location.trim() === '' &&
-    //   // message.trim() === ''
-    //   setNameError('Field required.');
-    // } else {
-    //   setModalVisible(!modalVisible);
-    //   resetValues();
-    //   setNameError(null);
-    //   console.log('Message Sent');
-    // }
+ 
   };
 
   const [nameError, setNameError] = useState('');
@@ -162,19 +149,14 @@ const InfoModal = ({
   };
 
   return (
-    // <TouchableWithoutFeedback
-    //   style={{backgroundColor: 'red', flex: 1, width: 100, height: 100}}
-    //   onPress={() => {
-    //     // setModalVisible(false);
-    //     console.log('Pressed outside Modal');
-    //   }}>
+
     <View style={styles.centeredView}>
       <ClosableModal
-        // style={{backgroundColor: 'red'}}
+   
         animationType="slide"
-        // backdropOpacity={0.3}
+   
         transparent={true}
-        // visible={modalVisible}
+    
         show={modalVisible}
         overlayColor={'rgba(0,0,0,0.8)'}
         onClose={() => {
@@ -185,9 +167,7 @@ const InfoModal = ({
         }}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            {/* <TouchableWithoutFeedback */}
-            {/* style={styles.modalView}
-          onPress={() => console.log('PPP')}> */}
+         
             <Text style={styles.modalText}>{title}</Text>
             <View style={styles.inputView}>
               <Text>Name</Text>
@@ -283,12 +263,12 @@ const InfoModal = ({
               }}>
               <Text style={styles.textStyle}>Submit</Text>
             </TouchableHighlight>
-            {/* </TouchableWithoutFeedback> */}
+        
           </View>
         </View>
       </ClosableModal>
     </View>
-    /* </TouchableWithoutFeedback> */
+   
   );
 };
 

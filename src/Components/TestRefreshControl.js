@@ -4,7 +4,6 @@ import {
   RefreshControl,
   StyleSheet,
   Text,
-  SafeAreaView,
 } from 'react-native';
 
 const wait = (timeout) => {

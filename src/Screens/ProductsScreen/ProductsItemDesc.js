@@ -10,64 +10,15 @@ import DataModel from './DataModel.js';
 import {green} from '../../Components/PrimaryColors';
 import AsyncStorage from '@react-native-community/async-storage';
 
-// import {AsyncStorage} from 'react-native';
 
 export default function ProductsItemDesc({route, navigation}) {
-  const thedataObject = {
-    one: 'DM C2 5 018',
-    two: '15 - 19',
-    three: '1/8',
-    four: '15',
-    five: 'M8',
-    six: '60',
-    seven: '36',
-    eight: '26',
-
-    nine: '19 x 1.2',
-    ten: '850',
-    eleven: '450',
-  };
-  const theDataCel = [
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-    thedataObject,
-  ];
-
-  const thedataHeader = [
-    'Part No.',
-    'D (mm)',
-    'D (")',
-    'Dia (mm)',
-    'G',
-    'B (mm)',
-    'H (mm)',
-    'h (mm)',
-    'b x s (mm)',
-    'Fa,z (N)',
-    'Pack 1',
-  ];
+ 
+ 
 
   const item = route.params.item;
   const parentName = route.params.name;
   const parentdesc = route.params.desc;
-  // const markFavourite = route.params.markFavourite;
+
 
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -96,8 +47,7 @@ export default function ProductsItemDesc({route, navigation}) {
     console.log(modifiedDescList);
 
     parentDescList = parentdesc.split('<p>');
-    // parentDescList.filter((n) => n != '');
-    // parentDescList.pop();
+   
     parentDescList.shift();
     parentDescList.map((ite) => {
       modParentDescList.push(
@@ -139,7 +89,7 @@ export default function ProductsItemDesc({route, navigation}) {
     try {
       await AsyncStorage.setItem(
         item.name,
-        JSON.stringify(item), //JSON.stringify([JSON.stringify(item), parentName]),
+        JSON.stringify(item), 
       );
       console.log('saved');
     } catch (e) {
@@ -367,20 +317,7 @@ export default function ProductsItemDesc({route, navigation}) {
               </Text>
             ))}
 
-          {/* {item.category.map((cat, id) => (
-            <Text
-              key={id}
-              style={{
-                fontStyle: 'italic',
-                fontSize: 14,
-                color: '#515150',
-                marginLeft: 10,
-                marginRight: 10,
-                fontFamily: 'Rotis-SansSerif-Std_38713',
-              }}>
-              {cat}
-            </Text>
-          ))} */}
+       
         </View>
       </ScrollView>
     </>

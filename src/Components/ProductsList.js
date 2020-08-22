@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {Divider, TouchableRipple} from 'react-native-paper';
 import ListComponent from './ListComponent';
-import {Text} from 'react-native';
+
 
 export default function ProductsList({name, img, items, navigation, desc}) {
   useEffect(() => {

@@ -6,11 +6,10 @@ import {green, grey} from '../../Components/PrimaryColors';
 import AppbarHeader from '../../Components/AppbarHeader';
 import InfoModal from './InfoModal';
 import {
-  View,
-  Text,
+
   Image,
   Linking,
-  TouchableWithoutFeedback,
+  
 } from 'react-native';
 
 export default function More({navigation}) {
@@ -25,7 +24,7 @@ export default function More({navigation}) {
 
   const [visible, setVisible] = React.useState(false);
 
-  // const onToggleSnackBar = () => setVisible(!visible);
+
   const onDismissSnackBar = () => setVisible(false);
 
   const showModal = (x) => {

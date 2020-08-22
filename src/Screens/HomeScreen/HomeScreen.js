@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {View, Image} from 'react-native';
-import styles from './styles';
 import {Appbar} from 'react-native-paper';
 import HomeCard from '../../Components/HomeCard';
 import Splash from '../SplashScreen/SplashScreen';
-// import {Icon} from 'react-native-vector-icons/icon';
 import {Icon} from 'react-native-elements';
 import {green} from '../../Components/PrimaryColors';
 
@@ -33,7 +31,7 @@ export default function HomeScreen({navigation}) {
           justifyContent: 'space-between',
           paddingLeft: 10,
         }}>
-        {/* <Appbar.Action icon="menu" color="#fff" size={40} onPress={_navMenu} /> */}
+     
         <Icon
           name="menu"
           type="entypo"

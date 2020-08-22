@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import {DataTable, Dialog} from 'react-native-paper';
+import {DataTable} from 'react-native-paper';
 import {ScrollView} from 'react-native-gesture-handler';
 
 export default function DataChart({theDataCel, thedataHeader}) {

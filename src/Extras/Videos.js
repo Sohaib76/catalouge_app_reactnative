@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {ScrollView} from 'react-native-gesture-handler';
-import VideoDetails from '../../Components/VideoDetails';
-import AppbarHeader from '../../Components/AppbarHeader';
+import VideoDetails from '../Components/VideoDetails';
+import AppbarHeader from '../Components/AppbarHeader';
 
 const theVideosList = [
   {

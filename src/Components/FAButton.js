@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, Linking} from 'react-native';
+import {Text} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {IconButton} from 'react-native-paper';
 
@@ -25,9 +25,6 @@ export default function FAButton({icon, text, fabBtnPress}) {
         icon={icon}
         color="white"
         size={25}
-        // onPress={Linking.openURL(
-        //   'https://api.whatsapp.com/send?phone=971523171864&text=Hi,%20I%20want%20to%20know%20more%20about%20Hira%20Walraven%20products.',
-        // )}
       />
     </TouchableOpacity>
   );

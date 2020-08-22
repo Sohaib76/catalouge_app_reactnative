@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import {View, Text} from 'react-native';
-import {TouchableOpacity} from 'react-native';
 import ListComponent from './ListComponent';
 import {Divider, Appbar, TouchableRipple, Searchbar} from 'react-native-paper';
-import {ScrollView, FlatList} from 'react-native-gesture-handler';
+import {FlatList} from 'react-native-gesture-handler';
 
 export default function ProductsListItems({route, navigation}) {
   const items = route.params.items;
@@ -16,15 +15,7 @@ export default function ProductsListItems({route, navigation}) {
     setFiltered([]);
   };
 
-  // const [fav, setfav] = useState(items[0].isFavourite);
 
-  // const markFavourite = () => {
-  //   setfav(!fav);
-  // };
-
-  // {
-  //   console.log('Product List Item Render', fav);
-  // }
 
   const [showBar, setShowBar] = useState(false);
   const [filtered, setFiltered] = useState([]);
@@ -108,34 +99,6 @@ export default function ProductsListItems({route, navigation}) {
       {items.length > 0 ? (
         <ScrollVieww />
       ) : (
-        // <ScrollView style={{backgroundColor: 'white'}}>
-        //   {items.map((item, id) => (
-        //     <View key={id}>
-        //       <TouchableRipple
-        //         rippleColor="rgba(0, 0, 0, .82)"
-        //         onPress={() =>
-        //           navigation.navigate('ProductsItemDesc', {
-        //             item,
-        //             name,
-        //             desc,
-        //             // markFavourite,
-        //           })
-        //         }
-        //         style={{
-        //           display: 'flex',
-        //           flexDirection: 'row',
-        //           alignItems: 'center',
-        //           padding: 10,
-        //         }}>
-        //         <ListComponent
-        //           name={item.name}
-        //           img={item.product_images[0].image}
-        //         />
-        //       </TouchableRipple>
-        //       <Divider style={{elevation: 3}} />
-        //     </View>
-        //   ))}
-        // </ScrollView>
         <Text>No Favourites</Text>
       )}
     </>

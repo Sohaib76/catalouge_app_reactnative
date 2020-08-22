@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
-import {TouchableRipple, Divider, Appbar} from 'react-native-paper';
+import { Text, Image} from 'react-native';
+import {TouchableRipple, Divider} from 'react-native-paper';
 import {grey} from './PrimaryColors';
 
 export default function EServiceList({text, img, desc, navigation}) {
@@ -32,11 +32,6 @@ export default function EServiceList({text, img, desc, navigation}) {
               flex: 1,
               fontSize: 19,
               color: grey,
-              // fontFamily: 'SegoeUI',
-              // fontFamily: 'AgfaRotisSansSerifExtraBold',
-              //Rotis-SansSerif-Std_38713
-              //'Rotis Sans Serif 55'
-              //AgfaRotisSansSerifExtraBold
               marginRight: 10,
             }}>
             {text}

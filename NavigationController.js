@@ -7,40 +7,24 @@ import {
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import HomeScreen from './src/Screens/HomeScreen/HomeScreen';
-import Splash from './src/Screens/SplashScreen/SplashScreen';
 import Products from './src/Screens/ProductsScreen/Products';
 import Downloads from './src/Screens/DownloadsScreen/Downloads';
 import Contact from './src/Screens/ContactScreen/Contact';
 import Favourites from './src/Screens/FavouritesScreen/Favourites';
 import EngineeringServices from './src/Screens/ServicesScreen/EngineeringServices';
 import More from './src/Screens/MoreScreen/More';
-import VideosScreen from './src/Screens/VideosScreen/Videos.js';
 import ProductsListItems from './src/Components/ProductsListItems';
 import ProductsItemDesc from './src/Screens/ProductsScreen/ProductsItemDesc';
 import Locations from './src/Screens/LocationsScreen/Locations';
-import EServiceDesc from './src/Screens/ServicesScreen/EServiceDesc';
-
-import Icon from 'react-native-vector-icons/Ionicons';
-import {View} from 'react-native';
+import EServiceDesc from './src/Screens/ServicesScreen/EServiceDesc'
 import CustomDrawerContent from './src/Components/CustomDrawerContent';
-import ProductsFav from './src/Screens/ProductsScreen/ProductsFav';
 import VideosYou from './src/Screens/VideosScreen/VideosYou';
 
 const Stack = createStackNavigator();
 
 const Drawwer = createDrawerNavigator();
 
-// const config = {
-//   animation: 'spring',
-//   config: {
-//     stiffness: 1000,
-//     damping: 50,
-//     mass: 4,
-//     overshootClamping: true,
-//     restDisplacementThreshold: 0.01,
-//     restSpeedThreshold: 0.01,
-//   },
-// };
+
 
 function DownloadsStackNavigator() {
   return (
@@ -71,10 +55,7 @@ function ProductsStackNavigator() {
       screenOptions={{
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
 
-        // transitionSpec: {
-        //   open: config,
-        //   close: config,
-        // },
+       
 
         headerShown: false,
         gestureEnabled: true,

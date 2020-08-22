@@ -1,9 +1,5 @@
 import React, {useState} from 'react';
 import {View, Text, Image} from 'react-native';
-import {
-  TouchableOpacity,
-  TouchableHighlight,
-} from 'react-native-gesture-handler';
 import {TouchableRipple} from 'react-native-paper';
 import {green} from './PrimaryColors';
 
@@ -25,18 +21,7 @@ export default function HomeCard({
   };
 
   return (
-    // <View
-    //   style={{
-    //     backgroundColor: bgColor,
-    //     flex: 1,
-    //     margin: 10,
-    //     borderRadius: 15,
-    //     borderColor: '#005D40',
-    //     borderWidth: 4,
-    //     alignItems: 'center',
-    //     justifyContent: 'center',
 
-    //   }}>
     <TouchableRipple
       style={{
         backgroundColor: bgColor,
@@ -48,18 +33,10 @@ export default function HomeCard({
         alignItems: 'center',
         justifyContent: 'center',
       }}
-      // activeOpacity={1}
-      // rippleColor="rgba(0, 50, 0, 1)"
-      // underlayColor="white"
+
       onPress={navigator}>
       <View
         style={{
-          // backgroundColor: bgColor,
-          // flex: 1,
-          // margin: 10,
-          // borderRadius: 15,
-          // borderColor: '#005D40',
-          // borderWidth: 4,
           alignItems: 'center',
           justifyContent: 'center',
         }}>

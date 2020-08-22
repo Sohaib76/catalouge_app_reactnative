@@ -18,7 +18,7 @@ export default function EServiceDesc({navigation, route}) {
         />
         <Appbar.Content
           titleStyle={{
-            // fontFamily: 'AgfaRotisSansSerifExtraBold',
+          
             fontWeight: 'bold',
           }}
           style={{marginLeft: 0}}
@@ -34,7 +34,7 @@ export default function EServiceDesc({navigation, route}) {
             width: '100%',
             height: 250, //height: '60%',
             flex: 0,
-            // margin: 10, //16
+    
           }}
         />
 
@@ -46,7 +46,7 @@ export default function EServiceDesc({navigation, route}) {
               margin: 10,
               marginBottom: 0,
               fontWeight: 'bold',
-              // fontFamily: 'AgfaRotisSansSerifExtraBold',
+         
             }}>
             {text}
           </Text>
@@ -76,9 +76,7 @@ export default function EServiceDesc({navigation, route}) {
               color: grey,
               fontSize: 18, //20
               margin: 10,
-              // fontFamily: 'AgfaRotisSansSerifExtraBold',
-
-              //fontFamily: 'Rotis-SansSerif-Std_38713',
+            
               lineHeight: 25,
               marginBottom: 20,
             }}>

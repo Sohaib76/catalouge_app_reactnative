@@ -1,15 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import {ScrollView} from 'react-native-gesture-handler';
-import ProductsList from '../../Components/ProductsList';
 import AppbarHeader from '../../Components/AppbarHeader';
 import {Text, View, ActivityIndicator, RefreshControl} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import {Divider, TouchableRipple} from 'react-native-paper';
 import ListComponent from '../../Components/ListComponent';
 import {green, grey} from '../../Components/PrimaryColors';
-import {Button, IconButton, Searchbar} from 'react-native-paper';
-import {SafeAreaView} from 'react-native';
-import {Input} from 'react-native-elements';
+import { Searchbar} from 'react-native-paper';
 import {FlatList} from 'react-native';
 
 export default function Favourites({navigation}) {
@@ -157,17 +154,10 @@ export default function Favourites({navigation}) {
     );
   }
 
-  // const [query, setQuery] = useState('');
+
 
   const [searchQuery, setSearchQuery] = React.useState('');
 
-  // const contains = (val, query) => {
-  //   console.log('Inside if', val);
-  // if (val.includes(query)) {
-  //   return true;
-  // }
-  // return false;
-  // };
 
   const onChangeSearch = (query) => {
     const filteredList = [];
@@ -180,15 +170,15 @@ export default function Favourites({navigation}) {
       } else {
         console.log('No Match');
       }
-      // contains(val, formattedQuery);
+  
     });
     setSearchQuery(query);
     setFiltered(filteredList);
     console.log('Filtered', filteredList);
-    // setFiltered(data);
+    
   };
 
-  // const handleSearch = (text) => setQuery(text);
+
 
   return (
     <>
@@ -201,7 +191,7 @@ export default function Favourites({navigation}) {
       {console.log('return fav', favs)}
       {console.log('return theListHaving', theListHavingObjects)}
 
-      {/* {favs.length == 0 && <Text>No Favourites</Text>} */}
+     
       {showBar && (
         <Searchbar
           placeholder="Search"
@@ -210,9 +200,9 @@ export default function Favourites({navigation}) {
         />
       )}
 
-      {/* {<RenderHeader />} */}
+      
       {doneFetch ? (
-        // {(favs.length > 0) ? console.log(): console.log()}
+    
 
         <ScrollVieww />
       ) : (

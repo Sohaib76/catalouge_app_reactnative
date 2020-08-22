@@ -1,41 +1,29 @@
 import React, {useState} from 'react';
 import {Modal, StyleSheet, View} from 'react-native';
-
-import DataChart from '../../Components/DataChart';
 import {IconButton} from 'react-native-paper';
-
-import PDFView from 'react-native-view-pdf';
 import PdfViewTest from '../../Components/PdfViewTest';
 import ClosableModal from 'rn-closable-modal';
 
 const DataModel = ({
   modalVisible,
   setModalVisible,
-  theDataCel,
-  thedataHeader,
+
   chart,
 }) => {
   return (
-    // <View style={styles.centeredView}>
+ 
     <ClosableModal
-      // style={{backgroundColor: 'red'}}
+ 
       animationType="slide"
-      // backdropOpacity={0.3}
+ 
       transparent={true}
-      // visible={modalVisible}
+     
       show={modalVisible}
       overlayColor={'rgba(0,0,0,0.8)'}
       onClose={() => {
         setModalVisible(false);
       }}>
-      {/* <Modal
-        onDismiss={() => setModalVisible(false)}
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(false);
-        }}> */}
+   
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
           <View
@@ -51,7 +39,7 @@ const DataModel = ({
               icon="close"></IconButton>
           </View>
 
-          {/* <DataChart thedataHeader={thedataHeader} theDataCel={theDataCel} /> */}
+          
           <PdfViewTest url={chart} />
           {console.log(chart)}
         </View>

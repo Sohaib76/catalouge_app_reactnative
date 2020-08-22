@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, Linking} from 'react-native';
+import {View, Image, Linking} from 'react-native';
 import {Drawer, Divider, FAB, IconButton, Button} from 'react-native-paper';
 import {green} from './PrimaryColors';
 import {ScrollView} from 'react-native-gesture-handler';

@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {View, Text, Image, StyleSheet, Linking} from 'react-native';
-// import MapView from 'react-native-maps';
 import {Picker} from '@react-native-community/picker';
 import {Searchbar} from 'react-native-paper';
 import {grey, green} from '../../Components/PrimaryColors';
@@ -10,7 +9,7 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native-gesture-handler';
 
-import MapView, {PROVIDER_GOOGLE, Callout} from 'react-native-maps';
+import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import {Marker} from 'react-native-maps';
 
 export default function Locations({navigation}) {
@@ -32,35 +31,32 @@ export default function Locations({navigation}) {
     if (itemValue == 'Global Corporate Offices') {
       setlat(19.107029);
       setlong(72.881736);
-      // console.log(itemIndex);
+      
     }
     if (itemValue == 'RAK - UAE') {
       setlat(25.384369);
       setlong(55.980387);
-      // console.log(lat);
+     
     }
     if (itemValue == 'Abu Dhabi - UAE') {
       setlat(24.375706);
       setlong(54.496087);
-      // console.log(lat);
+     
     }
     if (itemValue == 'Dubai - UAE') {
       setlat(24.924429);
       setlong(55.057431);
-      // console.log(lat);
+    
     }
     if (itemValue == 'Saudi Arabia') {
       setlat(24.710976);
       setlong(46.693969);
     }
-    //setlat(19.107029);
-    //setlong(72.881736);
+   
 
-    // setlat(24.924429);
-    // setlong(55.057431);
+
   };
 
-  //24.375817, 54.496072
 
   return (
     <>
@@ -137,13 +133,7 @@ export default function Locations({navigation}) {
           </TouchableWithoutFeedback>
         </View>
 
-        {/* <View
-          style={{
-            resizeMode: 'stretch',
-            height: 420,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}> */}
+       
         <View style={{flex: 1, height: 380}}>
           <MapView
             provider={PROVIDER_GOOGLE} // remove if not using Google Maps
@@ -160,7 +150,7 @@ export default function Locations({navigation}) {
                 longitude: long,
               }}
               title={'Hira Walraven LLC'}
-              // description={'desc'}
+              
             />
           </MapView>
         </View>
@@ -218,10 +208,6 @@ const styles = StyleSheet.create({
   },
   map: {
     height: '100%',
-    // resizeMode: 'stretch',
-    // height: 420,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // ...StyleSheet.absoluteFillObject,
+
   },
 });

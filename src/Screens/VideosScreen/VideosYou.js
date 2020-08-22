@@ -6,9 +6,8 @@ import AppbarHeader from '../../Components/AppbarHeader';
 
 const CHANNEL_ID = 'UCqH-4meI8X2giZMHO-Y1idQ';
 // const API_KEY = 'AIzaSyA_Zym0Y8pogUylmaxgo7a_3NvUj7UVrqQ'; //my old
-// const API_KEY = 'AIzaSyBnAhJjSM7u3AXbYmH6xQL7UcOLpqpTYzw'; //saqib
-// const API_KEY = 'AIzaSyDKEPO4KigZO1VzoGcuICMPnMwVGlyDcyw'; //my new
-const API_KEY = 'AIzaSyAIyyiYQnlv3jBKyd7euILhg7lOSCH2T60'; //saqib new
+// const API_KEY = 'AIzaSyBnAhJjSM7u3AXbYmH6xQL7UcOLpqpTYzw'; //client
+const API_KEY = 'AIzaSyAIyyiYQnlv3jBKyd7euILhg7lOSCH2T60'; //client new
 
 var tempVideosList = [];
 export default class VideosYou extends Component {
@@ -63,20 +62,7 @@ export default class VideosYou extends Component {
               });
             }
 
-            // console.log(data.items[0].snippet.title);
-            // if (data.items.length > 0) {
-            //   agos = 2020 - data.items[0].snippet.publishedAt.substring(0, 4);
-
-            //   this.setState({
-            //     theVideoList: this.state.theVideosList.push({
-            //       videoUrl: `https://www.youtube.com/watch?v=${data.items[0].id}`,
-            //       name: data.items[0].snippet.title,
-            //       tag: data.items[0].snippet.channelTitle,
-            //       views: data.items[0].statistics.viewCount,
-            //       ago: agos,
-            //     }),
-            //   });
-            // }
+       
           })
           .catch((error) => {
             console.log(error);
@@ -85,8 +71,7 @@ export default class VideosYou extends Component {
     } catch {
       console.log('No Json Response');
     }
-    // this.setState({theVideosList: tempVideosList});
-    // console.log('list In did mount', this.state.theVideosList);
+    
   };
 
   // The Response
