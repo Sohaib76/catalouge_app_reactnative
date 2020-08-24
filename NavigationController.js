@@ -9,7 +9,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import HomeScreen from './src/Screens/HomeScreen/HomeScreen';
 import Products from './src/Screens/ProductsScreen/Products';
 import Downloads from './src/Screens/DownloadsScreen/Downloads';
-import Contact from './src/Screens/ContactScreen/Contact';
+// import Contact from './src/Screens/ContactScreen/Contact';
 import Favourites from './src/Screens/FavouritesScreen/Favourites';
 import EngineeringServices from './src/Screens/ServicesScreen/EngineeringServices';
 import More from './src/Screens/MoreScreen/More';
@@ -69,13 +69,13 @@ function ProductsStackNavigator() {
   );
 }
 
-function ContactStackNavigator() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Contacts" component={Contact} />
-    </Stack.Navigator>
-  );
-}
+// function ContactStackNavigator() {
+//   return (
+//     <Stack.Navigator>
+//       <Stack.Screen name="Contacts" component={Contact} />
+//     </Stack.Navigator>
+//   );
+// }
 
 function FavouritesStackNavigator() {
   return (

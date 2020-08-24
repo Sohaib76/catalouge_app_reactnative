@@ -172,8 +172,8 @@ export default function ProductsItemDesc({route, navigation}) {
       <DataModel
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
-        theDataCel={theDataCel}
-        thedataHeader={thedataHeader}
+        // theDataCel={theDataCel}
+        // thedataHeader={thedataHeader}
         chart={item.chart}
       />
 
