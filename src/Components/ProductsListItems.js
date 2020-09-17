@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text,Image} from 'react-native';
 import ListComponent from './ListComponent';
 import {Divider, Appbar, TouchableRipple, Searchbar} from 'react-native-paper';
 import {FlatList} from 'react-native-gesture-handler';
@@ -80,7 +80,9 @@ export default function ProductsListItems({route, navigation}) {
 
       <Appbar.Header style={{backgroundColor: 'white'}}>
         <Appbar.Action
-          icon="keyboard-backspace"
+          icon={() => (
+            <Image source={require('../HDIcons/back.png')} />
+          )}
           color="#005D40"
           onPress={() => navigation.goBack()}
         />

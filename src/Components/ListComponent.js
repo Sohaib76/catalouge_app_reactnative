@@ -8,10 +8,11 @@ export default function ListComponent({name, img}) {
       <Image
         source={{uri: img}}
         style={{
-          width: 80,
-          height: 80,
+          width: 100,
+          height: 100,
           flex: 0,
-          marginRight: 8,
+          marginRight: 20,
+          resizeMode:'contain'
         }}
       />
       <Text

@@ -7,7 +7,7 @@ export default function Splash() {
     <View style={styles.splash__container}>
       <ImageBackground
         style={styles.splash__img}
-        source={require('../../Images/Splash.png')}>
+        source={require('../../HDIcons/splash.png')}>
         <TouchableOpacity
           style={styles.splash__btn}
       

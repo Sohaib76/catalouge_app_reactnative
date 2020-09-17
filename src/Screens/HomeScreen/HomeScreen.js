@@ -73,7 +73,7 @@ export default function HomeScreen({navigation}) {
               flexDirection: 'row',
             }}>
             <HomeCard
-              img={require('../../Images/homeImages/logo.png')}
+              img={require('../../HDIcons/logo.png')}
               text="PRODUCTS"
               navigation={navigation}
               navigateTo="Products"
@@ -81,13 +81,14 @@ export default function HomeScreen({navigation}) {
               bgColor={green}
               txtColor="white"
             />
-            <HomeCard
-              img={require('../../Images/homeImages/location.png')}
-              text="LOCATIONS"
+             <HomeCard
+              img={require('../../HDIcons/pair-of-gears.png')}
+              text="ENGINEERING SERVICES"
               navigation={navigation}
-              navigateTo="Locations"
+              navigateTo="Engineering Services"
               fav={false}
             />
+           
           </View>
 
           <View
@@ -97,15 +98,15 @@ export default function HomeScreen({navigation}) {
               flexDirection: 'row',
             }}>
             <HomeCard
-              img={require('../../Images/homeImages/star.png')}
-              text="FAVOURITE LIST"
+              img={require('../../HDIcons/star.png')}
+              text="FAVOURITES LIST"
               navigation={navigation}
               navigateTo="Favourites"
               fav={true}
               //Favourites
             />
             <HomeCard
-              img={require('../../Images/homeImages/download.png')}
+              img={require('../../HDIcons/download.png')}
               text="DOWNLOAD"
               navigation={navigation}
               navigateTo="Downloads"
@@ -119,20 +120,21 @@ export default function HomeScreen({navigation}) {
               display: 'flex',
               flexDirection: 'row',
             }}>
+               <HomeCard
+              img={require('../../HDIcons/location.png')}
+              text="LOCATIONS"
+              navigation={navigation}
+              navigateTo="Locations"
+              fav={false}
+            />
             <HomeCard
-              img={require('../../Images/homeImages/call-center.png')}
+              img={require('../../HDIcons/contact.png')}
               text="CONTACT US"
               navigation={navigation}
               navigateTo="Contact Us"
               fav={false}
             />
-            <HomeCard
-              img={require('../../Images/homeImages/pair-of-gears.png')}
-              text="ENGINEERING SERVICES"
-              navigation={navigation}
-              navigateTo="Engineering Services"
-              fav={false}
-            />
+           
           </View>
         </View>
       </View>

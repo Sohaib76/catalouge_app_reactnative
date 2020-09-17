@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Linking} from 'react-native';
+import {View, Text, Linking,Image} from 'react-native';
 import {SliderBox} from 'react-native-image-slider-box';
 import {Appbar, IconButton} from 'react-native-paper';
 
@@ -157,7 +157,9 @@ export default function ProductsItemDesc({route, navigation}) {
 
       <Appbar.Header style={{backgroundColor: 'white'}}>
         <Appbar.Action
-          icon="keyboard-backspace"
+         icon={() => (
+          <Image source={require('../../HDIcons/back.png')} />
+        )}
           color="#005D40"
           onPress={() => navigation.goBack()}
         />
@@ -194,8 +196,11 @@ export default function ProductsItemDesc({route, navigation}) {
             onPress={onPressStarred}
           />
         </View>
-        <View style={{backgroundColor: 'white'}}>
-          <SliderBox images={images} dotColor="red" inactiveDotColor="grey" />
+        <View style={{backgroundColor: 'white',}}>
+          <SliderBox 
+          ImageComponentStyle={{}}
+          resizeMode="contain"
+          images={images} dotColor="red" inactiveDotColor="grey" />
         </View>
 
         <Text
@@ -254,7 +259,7 @@ export default function ProductsItemDesc({route, navigation}) {
             icon="arrow-right-drop-circle"
           />
           <FAButton fabBtnPress={download} text="DOWNLOAD" icon="download" />
-          <FAButton fabBtnPress={chat} text="LETS CHAT" icon="whatsapp" />
+          <FAButton fabBtnPress={chat} text="LET'S CHAT" icon="whatsapp" />
         </View>
 
         <View style={{flexDirection: 'row', alignItems: 'center'}}>

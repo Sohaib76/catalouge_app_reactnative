@@ -130,7 +130,14 @@ export default function Favourites({navigation}) {
               <>
                 <View>
                   <TouchableRipple
-                    onPress={() => console.log('Press')}
+                  onPress={() =>
+                    navigation.navigate('ProductsItemDesc', {
+                      item,
+                      name:item.name,
+                      desc:"test",
+                    })
+                  }
+                    // onPress={() => console.log(item)}
                     rippleColor="rgba(0, 0, 0, .92)"
                     style={{
                       display: 'flex',

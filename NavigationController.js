@@ -135,10 +135,11 @@ function DrawerNavigation() {
   return (
     <NavigationContainer>
       <Drawwer.Navigator
+
         drawerContent={(props) => <CustomDrawerContent {...props} />}
         initialRouteName="Home"
         backBehavior="initialRoute">
-        <Drawwer.Screen name="Home" component={HomeScreen} />
+        <Drawwer.Screen name="Home" component={HomeStackNavigator} />
 
         <Drawwer.Screen name="Products" component={ProductsStackNavigator} />
         <Drawwer.Screen name="Downloads" component={DownloadsStackNavigator} />
@@ -162,5 +163,44 @@ function DrawerNavigation() {
     </NavigationContainer>
   );
 }
+
+
+function HomeStackNavigator() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+      }}>
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+      />
+    <Stack.Screen name="Products" component={ProductsStackNavigator} />
+        <Stack.Screen name="Downloads" component={DownloadsStackNavigator} />
+        <Stack.Screen name="Videos" component={VideosStackNavigator} />
+        <Stack.Screen name="Contact Us" component={MoreStackNavigator} />
+        {/* <Drawwer.Screen name="ProductsFav" component={ProductsStackNavigator} /> */}
+        <Stack.Screen
+          name="Favourites"
+          component={FavouritesStackNavigator}
+        />
+        <Stack.Screen
+          name="Engineering Services"
+          component={EngineeringServicesStackNavigator}
+        />
+        <Stack.Screen
+          name="More Information"
+          component={MoreStackNavigator}
+        />
+        <Stack.Screen name="Locations" component={LocationsStackNavigator} />
+
+    </Stack.Navigator>
+  );
+}
+
+
+
+
 
 export default DrawerNavigation;

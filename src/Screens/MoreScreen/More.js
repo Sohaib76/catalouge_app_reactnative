@@ -81,7 +81,7 @@ export default function More({navigation}) {
               left={() => <List.Icon color={green} icon="email-minus" />}
             />
           </TouchableRipple>
-          <Divider style={{elevation: 0, backgroundColor: 'black'}} />
+          {/* <Divider style={{elevation: 0, backgroundColor: 'black'}} /> */}
         </List.Section>
 
         <List.Section>
@@ -119,7 +119,7 @@ export default function More({navigation}) {
 
           <TouchableRipple
             onPress={() =>
-              Linking.openURL('https://ae.linkedin.com/in/diamondwalraven')
+              Linking.openURL('https://www.linkedin.com/company/hira-walraven')
             }>
             <List.Item
               titleStyle={{fontSize: 18, color: grey}}
@@ -152,7 +152,7 @@ export default function More({navigation}) {
               )}
             />
           </TouchableRipple>
-          <Divider style={{elevation: 0, backgroundColor: 'black'}} />
+          {/* <Divider style={{elevation: 0, backgroundColor: 'black'}} /> */}
         </List.Section>
 
         <List.Section>
@@ -179,7 +179,7 @@ export default function More({navigation}) {
               left={() => <List.Icon color={green} icon="puzzle" />}
             />
           </TouchableRipple>
-          <Divider style={{elevation: 0, backgroundColor: 'black'}} />
+          {/* <Divider style={{elevation: 0, backgroundColor: 'black'}} /> */}
         </List.Section>
       </ScrollView>
       <Snackbar visible={visible} onDismiss={onDismissSnackBar}>

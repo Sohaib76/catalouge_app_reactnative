@@ -3,16 +3,29 @@ import {View, Text, Image} from 'react-native';
 import {green, grey} from '../../Components/PrimaryColors';
 import {ScrollView} from 'react-native-gesture-handler';
 import {Appbar} from 'react-native-paper';
+import FAButton from '../../Components/FAButton.js';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import {IconButton} from 'react-native-paper';
+
 
 export default function EServiceDesc({navigation, route}) {
   const {text, img, desc} = route.params;
+
+
+  const chat = () => {
+    Linking.openURL(
+      'https://api.whatsapp.com/send?phone=971523171864&text=Hi,%20I%20want%20to%20know%20more%20about%20Hira%20Walraven%20products.',
+    );
+  };
   return (
     <>
       <View style={{height: 2, backgroundColor: 'red', width: '100%'}} />
 
       <Appbar.Header style={{backgroundColor: 'white'}}>
         <Appbar.Action
-          icon="keyboard-backspace"
+          icon={() => (
+            <Image source={require('../../HDIcons/back.png')} />
+          )}
           color="#005D40"
           onPress={() => navigation.goBack()}
         />
@@ -82,6 +95,37 @@ export default function EServiceDesc({navigation, route}) {
             }}>
             {desc}
           </Text>
+
+
+
+          <TouchableOpacity
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#005D40',
+        borderRadius: 50,
+        flex: 1,
+        width: '50%',
+        marginLeft:100
+      }}
+      onPress={chat}>
+      <Text
+        style={{color: '#fff', fontSize: 10, marginLeft: 10, marginRight: -8}}>
+        LET'S CHAT
+      </Text>
+      <IconButton
+        icon="whatsapp"
+        color="white"
+        size={25}
+      />
+    </TouchableOpacity>
+
+
+
+
+          {/* <FAButton fabBtnPress={chat} text="LET'S CHAT" icon="whatsapp" /> */}
 
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <View

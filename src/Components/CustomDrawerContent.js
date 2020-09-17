@@ -6,7 +6,11 @@ import {ScrollView} from 'react-native-gesture-handler';
 
 export default function CustomDrawerContent({navigation}) {
   return (
+    <>
+    <View style={{height: 2, backgroundColor: 'red', width: '100%'}} />
+
     <ScrollView>
+
       <Drawer.Item
         style={{padding: 1}}
         onPress={() => navigation.navigate('Home')}
@@ -176,10 +180,11 @@ export default function CustomDrawerContent({navigation}) {
           small
           icon="linkedin"
           onPress={() =>
-            Linking.openURL('https://ae.linkedin.com/in/diamondwalraven')
+            Linking.openURL('https://www.linkedin.com/company/hira-walraven')
           }
         />
       </View>
     </ScrollView>
+    </>
   );
 }

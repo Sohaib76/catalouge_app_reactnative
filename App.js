@@ -9,7 +9,9 @@ export default class App extends Component {
   render() {
     const customTextProps = {
       style: {
-        fontFamily: 'SegoeUI',
+        fontFamily: 'AgfaRotisSansSerifExtraBold',
+        // AGFAROTISSANSSERIFEXTRABOLD
+        
       },
     };
 
