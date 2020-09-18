@@ -79,14 +79,14 @@ export default function Locations({navigation}) {
           <Picker
             selectedValue={selectedValue}
             style={{
-              borderWidth: 10,
-
-              padding: 25,
+              // borderWidth: 10,
+              padding : Platform.OS === 'ios' ? 0 : 25,
+              // padding: 25,
               marginLeft: 3,
               marginRight: 10,
-              height: 50,
+              height: 150,
               width: '100%',
-              borderColor: 'red',
+              // borderColor: 'red',
             }}
             mode="dropdown"
             onValueChange={(itemValue, itemIndex) =>
@@ -111,7 +111,15 @@ export default function Locations({navigation}) {
               label="Saudi Arabia"
               value="Saudi Arabia"
             />
-          </Picker>
+          </Picker> 
+
+{/* <Picker
+  selectedValue={"java"}
+  style={{height: 150, width: 100}}
+ >
+  <Picker.Item label="Java" value="java" />
+  <Picker.Item label="JavaScript" value="js" />
+</Picker> */}
         </View>
 
         <View
@@ -136,7 +144,8 @@ export default function Locations({navigation}) {
        
         <View style={{flex: 1, height: 380}}>
           <MapView
-            provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+            // {Platform.OS === 'ios' && provider={PROVIDER_GOOGLE}}
+            provider={Platform.OS !== 'ios' && PROVIDER_GOOGLE} // remove if not using Google Maps
             style={styles.map}
             region={{
               latitude: lat,
