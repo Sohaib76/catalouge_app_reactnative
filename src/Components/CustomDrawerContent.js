@@ -8,12 +8,17 @@ export default function CustomDrawerContent({navigation}) {
   return (
     <>
     <View style={{height: 2, backgroundColor: 'red', width: '100%'}} />
-
+   <View style={{height: 20, width: '100%'}}/>
     <ScrollView>
-
+    
       <Drawer.Item
         style={{padding: 1}}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.reset({
+          index: 0,
+          routes: [{ name: 'Home' }],
+        })}
+        // navigation.navigate('Home')
+        //navigation.popToTop();
         icon={() => (
           <IconButton
             style={{marginLeft: 0, marginRight: -25}}

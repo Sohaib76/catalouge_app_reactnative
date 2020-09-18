@@ -8,13 +8,13 @@ npm install react-navigation-transitions (Uninstalled)
 npm install @welldone-software/why-did-you-render (Uninstalled)
 npm install react-hot-loader (Uninstalled)
 npm install react-native-youtube
-npm i react-native-image-slider-box
-npm install react-native-thumbnail-video
+npm i react-native-image-slider-box >
+npm install react-native-thumbnail-video >
 npm install react-native-maps
 npm install @react-native-community/picker
 npm install react-native-rename
 npm install react-native-maps
-npm install rn-closable-modal
+npm install rn-closable-modal >
 npm install react-native-elements
 npm install @react-native-community/async-storage
 npm install --save react-native-webview

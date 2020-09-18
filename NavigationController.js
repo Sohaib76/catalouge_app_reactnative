@@ -171,7 +171,9 @@ function HomeStackNavigator() {
       screenOptions={{
         headerShown: false,
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-      }}>
+      }}
+      initialRouteName="Home"
+      >
       <Stack.Screen
         name="Home"
         component={HomeScreen}

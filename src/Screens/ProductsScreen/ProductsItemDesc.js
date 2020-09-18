@@ -316,7 +316,7 @@ export default function ProductsItemDesc({route, navigation}) {
                   color: '#515150',
                   marginLeft: 10,
                   marginRight: 10,
-                  fontFamily: 'SegoeUIItalic',
+                  // fontFamily: 'SegoeUIItalic',
                 }}>
                 {cat}
               </Text>

@@ -12,17 +12,17 @@ export default function HomeScreen({navigation}) {
     navigation.navigate('Products');
   };
 
-  const [isVisible, setIsVisible] = useState(true);
+  // const [isVisible, setIsVisible] = useState(true);
 
-  useEffect(() => {
-    setTimeout(function () {
-      setIsVisible(false);
-    }, 5000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(function () {
+  //     setIsVisible(false);
+  //   }, 5000);
+  // }, []);
 
   return (
     <View style={{flex: 1}}>
-      {isVisible ? <Splash /> : null}
+      {/* {isVisible ? <Splash /> : null} */}
       <View style={{height: 2, backgroundColor: 'red', width: '100%'}} />
       <Appbar.Header
         style={{
