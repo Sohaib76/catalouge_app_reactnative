@@ -55,7 +55,10 @@ componentDidMount(){
 
     return (
       <>
-                      <StatusBarPlaceHolder/>
+      {
+        Platform.OS === 'ios' &&  <StatusBarPlaceHolder/>
+      }
+                     
 
         {/* <StatusBar backgroundColor="#fff" barStyle="dark-content" hidden={false}/> */}
         {/* <StatusBar backgroundColor="#005D40" barStyle="dark-content" /> */}
